@@ -1,6 +1,6 @@
 # King's Quest VI Randomizer
 
-This is a (under construction) program that shuffles the locations of items in King's Quest 6. You still have to fulfil all of the normal conditions to pick up an item, but when it enters your inventory, it will be a different item from usual. This creates brand-new surprising ways to softlock yourself, so as always in King's Quest VI, make a lot of saves! The randomizer is designed to always generate a long-path-beatable game, but there may be some bugs. The logic does not care if you can finish short path or not, but it will often be possible.
+This is a (under construction) program that shuffles the locations of items in King's Quest 6. You still have to fulfill all of the normal conditions to pick up an item, but when it enters your inventory, it will be a different item from usual. This creates brand-new surprising ways to softlock yourself, so as always in King's Quest VI, make a lot of saves! The randomizer is designed to always generate a long-path-beatable game, but there may be some oversights in the logic. The logic does not care if you can finish short path or not, but it will often be possible.
 
 Any container (such as the teacup) will be filled at the USUAL LOCATION. These liquids are technically not items unto themselves, and they are not shuffled (at least in the first version of the randomizer).
 

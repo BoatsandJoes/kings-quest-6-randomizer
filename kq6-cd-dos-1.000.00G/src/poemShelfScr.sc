@@ -71,7 +71,7 @@
 				(gEgo loop: 3 cel: 0 setCycle: End self)
 			)
 			(3
-				(if (!= ((gInventory at: 47) owner:) 270) ; poem
+				(if (!= ((gInventory at: poemReplacement) owner:) 270) ; poem
 					(= register 1)
 					(roomConv
 						add: -1 13 5 18 1 ; "Alexander looks at the love poem book again. He reads:"
@@ -104,7 +104,7 @@
 			)
 			(4
 				(if (not register)
-					((gInventory at: 47) owner: -1) ; poem
+					((gInventory at: poemReplacement) owner: -1) ; poem
 					(poem
 						init:
 						posn: 303 92
@@ -172,7 +172,7 @@
 			)
 			(1
 				(poem dispose:)
-				(gEgo get: 47) ; poem
+				(gEgo get: poemReplacement) ; poem
 				(= cycles 2)
 			)
 			(2

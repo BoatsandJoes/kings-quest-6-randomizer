@@ -57,7 +57,7 @@ shield 408 43
 skeletonKey 670 44
 spellBook 270 45
 teaCup 480
-poem 270
+poem 270 47
 tinderBox 280
 tomato 480 49
 sentence 450 50
