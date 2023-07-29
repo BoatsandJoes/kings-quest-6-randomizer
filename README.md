@@ -1,3 +1,15 @@
+# King's Quest VI Randomizer
+
+This is a (under construction) program that shuffles the locations of items in King's Quest 6. You still have to fulfil all of the normal conditions to pick up an item, but when it enters your inventory, it will be a different item from usual. This creates brand-new surprising ways to softlock yourself, so as always in King's Quest VI, make a lot of saves! The randomizer is designed to always generate a long-path-beatable game, but there may be some bugs. The logic does not care if you can finish short path or not, but it will often be possible.
+
+Any container (such as the teacup) will be filled at the USUAL LOCATION. These liquids are technically not items unto themselves, and they are not shuffled (at least in the first version of the randomizer).
+
+The decompiled game scripts have some (under construction) item numbers and room numbers replaced with a string. The python script (under construction) decides where the items should be shuffled to, and then replaces those strings with the replacement item. The scripts can then be placed into the game folder, the game can be loaded into SCI Companion, and the randomized version of the game can be played. The scripts will only take effect if the game is run through SCI Companion: it can still be played normally outside of SCI Companion. The scripts can be replaced with newly-generated scripts to shuffle the items again.
+
+This project is built on top of SCI scripts created by Sierra and decompiled by sluicebox.
+
+Original readme for decompiled scripts below.
+
 # Sierra Creative Interpeter - Scripts
 
 This repository contains decompiled scripts for Sierra's SCI games.

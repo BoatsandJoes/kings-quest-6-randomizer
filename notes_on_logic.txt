@@ -1,0 +1,216 @@
+Acts:
+Trading ring for map from the merchant enters act 2
+Passing gnomes enters act 3
+Rescuing Celeste from the Minotaur enters act 4
+Lifting Beast's curse enters act 5
+
+In the vanilla game (by skipping the gnomes) and in randomizer, it is possible to do these events in a different order. No matter what order you do the events in, the acts will always go 1 2 3 4 5. For example, if you get the map to go to act 2, and then rescue Celeste from the Minotaur, you will enter act 3, not act 4. Going back to the gnomes at this time would enter act 4 (although I haven't tested that the gnomes stick around).
+
+Most things don't care about the current act, but some do. For example, the new items that spawn in the garden on the Isle of Wonder are controlled by the current act. I need to do a little more research to work out all of the act logic.
+
+
+Items (name, owner, id) (some ids are missing: this means that I haven't replaced them in the scripts yet):
+map 280
+boringBook 270 1 (may appear to respawn if item is lost, but actually the respawned book cannot be picked up. This is based on code inspection: confirm ingame)
+brick 510 2
+brush 280
+hair 530
+clothes 540 5
+coal 560 6
+deadMansCoin 430 7
+dagger 440 8
+coin 200 9
+egg 490 10
+skull 415 11
+feather 300 12
+flower 300 13
+flute 280
+gauntlet 650 15
+cassimaHair 210
+handkerchief 680 17
+holeInTheWall 480 18
+huntersLamp 520 19
+letter 780 20
+lettuce 480 (has a special timer)
+milk 470 22
+mint 280
+mirror 540 24
+newLamp 240
+nail (no owner by default in vanilla. It becomes 880 when the picture is removed from the wall) 26 (not randomized for now, due to 1. weird owner behavior 2. it's logically just a duplicate of skeleton key and 3. the location is short path only anyway. A duplicate skeleton key would be nice, though.)
+nightingale 280
+ticket 600 28
+participle 500 29
+pearl 450 30
+peppermint 390 31
+note 210
+potion 480
+rabbitFoot 290 34
+ribbon 210
+riddleBook 460 36
+ring 540 37 (has some special logic for beast timer that I have not tested)
+rose 530 38
+royalRing 200 39
+sacredWater 380 40
+scarf 490 41
+scythe 560 42
+shield 408 43
+skeletonKey 670 44
+spellBook 270 45
+teaCup 480
+poem 270
+tinderBox 280
+tomato 480 49
+sentence 450 50
+ink 240 51
+
+Item temporary or permanent loss of access (items that are no longer useful not included, but those matter for pawn shop):
+If you have an item checked out from the shopkeeper and lose it, you can no longer access the rest (unless MAYBE if you reobtain the coins; not sure. Better test)
+map can be traded for ring and possibly pearl. But there's no way to lose those items, and they're given to the shopkeeper by the player (not random), so the map can always be retrieved.
+Trading ring to singsing makes it not retrievable, locking the map and ink locations if you haven't already gotten them.
+Burn Beauty's dress (locks out of short path; nbd)
+iceberg lettuce can melt (but I think it's always possible to get it to the pond before it does. Where is the farthest location from the pond? probably catacombs. Maybe it should be excluded from there if you don't know cataclypse... but maybe it's fine. test it)
+
+Locations:
+    Isle of the Crown:
+	    requires: none
+		locations:
+		    beach 1 & beach 2
+			mint
+			ferry cabin
+			lamp (requires hunters lamp, act 1 or 5, and you have to be done with the rain spell if you want to keep access to the embers (and thus the underworld and thus the river styx and thus the long path castle))
+	Merchant trades
+	    requires: none
+		locations:
+		    map & ink (requires ring)
+			ring retrade (requires pearl. map works, but singsing leaves if you don't have it)
+			4 objects (requires coin. this logic is a complicated special case, since you can only carry 1 at a time, and if you lose it you're locked out of the others)
+		nonlocations:
+		    reanimation
+	Singsing
+	    requires:
+		    map
+			nightingale
+		locations:
+		    ribbon (requires ring, and if you have to do this check to get pearl then there's no way to check ink + map locations (which may be fine, depending on settings))
+			note (requires poem and ring)
+		nonlocations: 
+		    sending a rose
+	Sacred Mountain:
+	    requires:
+		    map
+		locations:
+		    feather
+			flower
+			peppermint (requires tinderbox)
+	Catacombs:
+	    requires:
+		    map
+		locations:
+		    shield (need to check dagger to get out)
+			coins (need to check dagger to get out)
+			skull (need to check dagger to get out)
+			dagger + sacred water (requires scarf, plus hole in the wall and tinderbox and brick on easy logic)
+	Isle of Wonder
+	    requires:
+		    map
+		locations:
+		    sentence
+			pearl (requires boring book)
+	Isle of Wonder inside:
+	    requires (easy logic only, except... can you gnome skip to the right?):
+		    nightingale
+			rabbit's foot
+			flower
+			invisible ink
+			mint (not peppermint)
+		locations:
+		    book of riddles (requires dangling participle)
+			milk
+			teacup (requires book of riddles traded to shopkeeper)
+			progressive teacup (requires teacup and rotten tomato)
+			rotten tomato
+			scarf
+			lettuce
+			baby's tears (requires spellbook and hunter's lamp. Lamp is weird special case)
+			hole in the wall (requires flute)
+			fake death potion (requires act 4 or 5)
+			spoiled egg (requires coal)
+	Isle of the Beast:
+	    requires:
+		    map
+		locations
+		    participle (requires sentence)
+			lamp (requires lettuce)
+			rose (requires shield and either lettuce or (ring and rose)) (reobtainable)
+			beast's ring (requires lettuce shield and scythe, plus ring + rose to get out of beast mode) (see notes)
+				1. I'm not 100% clear on this but I think the timer activates when getting the item from the beast, but the script egoBeastScript that is called when the timer expires, turning you into a beast, is attached to the ring. This doesn't match the lore, so ideally the randomizer will attach the script to the other item... but it could be destroyed? So it should go on ego (but then disabled somehow)? Maybe it still works if the script is on the ring, even if the ring is not held by Alexander, which would mean no action required? idk. Needs testing
+				2. if you get ring and rose early in the game, you can teleport straight to the beast's garden. hedges + shield work from the back so that's fine (beast ring check is now inaccessible, so logic has to consider that. rose still needs shield to access). Lettuce does not work from the back (could either change alexander's target or change the lethality of the pond in that case, or player can just just use lettuce from the front and then teleport in) (also test boringBook skip, but I assume it doesn't work)
+			dress + mirror (requires lettuce, shield, scythe, rose, ring)
+	Druid island
+	    requires:
+            oracle visited
+            map (required to visit oracle anyway)
+			act < 5 or all items needed to cast rain (lamp, tears, falling water, sacred water, spellbook)
+        locations:
+		    coal
+			scythe
+	Land of the dead:
+	    requires:
+		    spellbook
+			skull
+			hair (either)
+			egg
+			embers (which is theoretically not randomized, but you need to cast rain for it? Like the lamp this is a weird special case of a container changing state)
+			dead coins (to get out)
+			mirror (to get out)
+			ticket (to get out)
+		locations:
+		    ticket
+		    key
+			handkerchief
+			gauntlet (requires ticket)
+			progressive teacup
+	Hair:
+	    1 check from ribbon and one from dress. You can only check one, and you must check the one that you first checked the vanilla location for (e.g. if you checked the ribbon location first, you can no longer check for the item contained within the clothes).
+	Short Castle:
+	    requires:
+		    dress
+			nightingale (to get out)
+			letter (to get out)
+			dagger (to get out)
+			mirror (to get out)
+			mint or peppermint (to get out)
+		locations:
+		    nail (requires nail to put back, I guess? Or do you put the same item back? But if the location doesn't contain a nail or skeletonKey to begin with, there's no reason to grab it at all)
+			letter (requires nail or skeletonKey)
+			sword (randomizing this would be meaningless and maybe difficult to code)
+	Long Castle:
+	    requires:
+		    cup of swamp ooze and river styx water (third container special case)
+			mirror OR Cassima's parents saved (in this version, as in vanilla, you cannot have the paint and the mirror)
+			spellbook
+			feather
+			brush
+			handkerchief
+			dagger (to get out)
+			letter (to get out)
+			correct lamp or mint or peppermint (to get out)
+		locations:
+		    letter (requires skeletonKey or nail) (unsure if putting the dagger here is valid or not; do you have time to backtrack?)
+	
+Hard Logic option:
+    getting past gnomes has no requirements (you always have the map when you get there)
+	catacombs checks only require an object to activate cataclypse, like the boring book (what else works?), and the red scarf for the last check (meaning it is allowed to be placed inside the dungeon).
+
+Spells are weird because they're not all items, and they need to go in a certain order. also, you need the spellbook to spawn some stuff, but not other stuff:
+    For nightmare:
+	    skull, embers (not an item), then egg + hair
+	For paint:
+	    teacup, swamp ooze (not an item), then river styx (not an item), then feather
+	For rain:
+	    lamp, tears (not an item) + sacred waters, then falling water (not an item)
+
+Timers:
+    embers (will not be shuffled this version so no code changes required)
+	lettuce (logic probably can ignore the timer unless it's in a 1 way)
+	beast (may just work: need to test. Although if it's broken it's no big deal)
