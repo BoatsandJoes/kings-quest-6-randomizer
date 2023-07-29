@@ -61,7 +61,7 @@
 		else
 			(gEgo init: reset: 3 posn: 146 187)
 		)
-		(if (== ((gInventory at: 2) owner:) gCurRoomNum) ; brick
+		(if (== ((gInventory at: brickReplacement) owner:) gCurRoomNum) ; brick
 			(brick init:)
 		)
 		(archer init: ignoreActors: 1 setPri: 10)
@@ -441,7 +441,7 @@
 		(cond
 			((== theVerb 5) ; Do
 				(cond
-					((gEgo has: 38) ; rose
+					((gEgo has: roseReplacement) ; rose
 						(gMessager say: noun theVerb 20) ; "Alexander already has a white rose."
 					)
 					((IsFlag 8)
@@ -719,7 +719,7 @@
 			(3
 				(brick dispose:)
 				(gGame givePoints: 1)
-				(gEgo get: 2 setCycle: End self) ; brick
+				(gEgo get: brickReplacement setCycle: End self) ; brick
 			)
 			(4
 				(gEgo setHeading: 180 reset:)
@@ -1310,7 +1310,7 @@
 				)
 			)
 			(1
-				(gEgo get: 38 reset: 5) ; rose
+				(gEgo get: roseReplacement reset: 5) ; rose
 				(= cycles 1)
 			)
 			(2

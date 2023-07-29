@@ -279,7 +279,7 @@
 			)
 			(30
 				(SetFlag 3)
-				(gEgo get: 40) ; sacredWater
+				(gEgo get: sacredWaterReplacement) ; sacredWater
 				(oracArm dispose:)
 				(gGame givePoints: 1)
 				(gEgo hide:)

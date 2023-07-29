@@ -54,7 +54,7 @@
 		(door init: cel: 5 setCycle: Beg door)
 		(genericFeatures init:)
 		(table init:)
-		(if (== ((gInventory at: 34) owner:) gCurRoomNum) ; rabbitFoot
+		(if (== ((gInventory at: rabbitFootReplacement) owner:) gCurRoomNum) ; rabbitFoot
 			(rabbitsFoot init:)
 		)
 		(gCurRoom setScript: enterScr)
@@ -311,7 +311,7 @@
 		(switch (= state newState)
 			(0
 				(gGame handsOff:)
-				(gEgo get: 34) ; rabbitFoot
+				(gEgo get: rabbitFootReplacement) ; rabbitFoot
 				(gMessager say: 4 5 0 0 self) ; "(CURIOUS) I see you have a rabbit's foot. Has it brought you much luck?"
 			)
 			(1

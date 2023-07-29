@@ -23,7 +23,7 @@
 	(method (init)
 		(proc402_0)
 		(super init: &rest)
-		(if (== ((gInventory at: 43) owner:) 408) ; shield
+		(if (== ((gInventory at: shieldReplacement) owner:) 408) ; shield
 			(theShield init:)
 		)
 		(gCurRoom setScript: (ScriptID 30 1)) ; walkIn
@@ -90,7 +90,7 @@
 			(3
 				(gGame givePoints: 1)
 				(theShield dispose:)
-				(gEgo posn: 84 149 get: 43 reset: 1) ; shield
+				(gEgo posn: 84 149 get: shieldReplacement reset: 1) ; shield
 				(= cycles 2)
 			)
 			(4

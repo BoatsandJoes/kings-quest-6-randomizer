@@ -432,7 +432,7 @@
 					((not (IsFlag 61))
 						(gCurRoom setScript: askForParti 0 register)
 					)
-					((== ((gInventory at: 36) owner:) gCurRoomNum) ; riddleBook
+					((== ((gInventory at: riddleBookReplacement) owner:) gCurRoomNum) ; riddleBook
 						(gCurRoom setScript: anythingYet 0 register)
 					)
 					(else
@@ -1016,7 +1016,7 @@
 			)
 			(26
 				(gGame handsOn:)
-				(gEgo posn: 109 154 get: 36 put: 29 gCurRoomNum reset: 6) ; riddleBook, participle
+				(gEgo posn: 109 154 get: riddleBookReplacement put: 29 gCurRoomNum reset: 6) ; riddleBook, participle
 				(LoadMany 0 1044 1046 1045 1007)
 				(self dispose:)
 			)

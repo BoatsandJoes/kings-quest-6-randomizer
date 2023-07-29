@@ -32,7 +32,7 @@
 					setSpeed: 6
 					normal: 0
 					put: 36 ; riddleBook
-					get: 45 ; spellBook
+					get: spellBookReplacement ; spellBook
 					view: 2771
 					loop: 4
 					cel: 0

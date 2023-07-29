@@ -367,7 +367,7 @@
 		(ribbonFeat init:)
 		(handFeat init:)
 		(super init: &rest)
-		(if (== ((gInventory at: 15) owner:) gCurRoomNum) ; gauntlet
+		(if (== ((gInventory at: gauntletReplacement) owner:) gCurRoomNum) ; gauntlet
 			(gauntlet init:)
 		)
 	)
@@ -409,7 +409,7 @@
 				(scrape play:)
 			)
 			(3
-				(gEgo reset: 0 posn: 267 130 get: 15) ; gauntlet
+				(gEgo reset: 0 posn: 267 130 get: gauntletReplacement) ; gauntlet
 				(= cycles 2)
 			)
 			(4

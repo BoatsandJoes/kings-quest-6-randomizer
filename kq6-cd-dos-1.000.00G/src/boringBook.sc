@@ -69,7 +69,7 @@
 				(= cycles 1)
 			)
 			(10
-				(gEgo reset: get: 1) ; boringBook
+				(gEgo reset: get: boringBookReplacement) ; boringBook
 				(gGame givePoints: 1)
 				(= cycles 2)
 			)

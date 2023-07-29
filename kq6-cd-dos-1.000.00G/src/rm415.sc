@@ -20,7 +20,7 @@
 	)
 
 	(method (init)
-		(if (== ((gInventory at: 11) owner:) gCurRoomNum) ; skull
+		(if (== ((gInventory at: skullReplacement) owner:) gCurRoomNum) ; skull
 			(theSkull init: stopUpd:)
 			(gCurRoom
 				addObstacle:
@@ -178,7 +178,7 @@
 			(5
 				((gCurRoom obstacles:) dispose:)
 				(gGame handsOn:)
-				(gEgo posn: 204 151 get: 11 reset: 1) ; skull
+				(gEgo posn: 204 151 get: skullReplacement reset: 1) ; skull
 				(gCurRoom
 					addObstacle:
 						((Polygon new:)

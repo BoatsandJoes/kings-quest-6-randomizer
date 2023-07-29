@@ -642,7 +642,7 @@
 				(gEgo
 					posn: 119 149
 					reset: 1
-					get: 8 ; dagger
+					get: daggerReplacement ; dagger
 					setMotion:
 						MoveTo
 						(- (gEgo x:) 20)

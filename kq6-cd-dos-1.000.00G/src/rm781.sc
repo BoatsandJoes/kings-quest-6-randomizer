@@ -90,7 +90,7 @@
 		(return
 			(switch theVerb
 				(1 ; Look
-					(if (gEgo has: 20) ; letter
+					(if (gEgo has: letterReplacement) ; letter
 						(gMessager say: noun theVerb 5) ; "Alexander is standing in an opulent bedroom that he believes--based on the contents of the trunk--must belong to the vizier. Knowing whose room it is makes Alexander feel even more ill-at-ease."
 						1
 					else
@@ -1056,7 +1056,7 @@
 	(method (doVerb theVerb &tmp temp0)
 		(switch theVerb
 			(1 ; Look
-				(if (gEgo has: 20) ; letter
+				(if (gEgo has: letterReplacement) ; letter
 					(= temp0 7)
 				else
 					(= temp0 6)
@@ -1064,8 +1064,8 @@
 				(gMessager say: noun theVerb temp0)
 			)
 			(5 ; Do
-				(if (not (gEgo has: 20)) ; letter
-					(gEgo get: 20) ; letter
+				(if (not (gEgo has: letterReplacement)) ; letter
+					(gEgo get: letterReplacement) ; letter
 					(gGame givePoints: 1)
 					(openTrunk next: viewLetter)
 					(chestInset dispose:)

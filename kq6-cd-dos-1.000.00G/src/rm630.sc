@@ -101,7 +101,7 @@
 			setScript: zombieScript 0 600
 		)
 		(gFeatures add: moon sky uWorldEntrance myPath eachElementDo: #init)
-		(if (not (gEgo has: 17)) ; handkerchief
+		(if (not (gEgo has: handkerchiefReplacement)) ; handkerchief
 			(motherGhost
 				init:
 				ignoreActors: 1
@@ -756,7 +756,7 @@
 		(switch theVerb
 			(2 ; Talk
 				(cond
-					((gEgo has: 17) ; handkerchief
+					((gEgo has: handkerchiefReplacement) ; handkerchief
 						(gMessager say: 2 2 1) ; "The woman's spirit is once again lost in her grief. She has nothing more to say to Alexander."
 					)
 					((!= (script state:) 0)
@@ -770,7 +770,7 @@
 				)
 			)
 			(1 ; Look
-				(if (gEgo has: 17) ; handkerchief
+				(if (gEgo has: handkerchiefReplacement) ; handkerchief
 					(gMessager say: noun theVerb 1) ; "The mother ghost still grieves for her son, but she seems to have a small bit of hope that Alexander might find him."
 				else
 					(gMessager say: noun theVerb 2) ; "The spirit of a woman hangs like a puff of smoke in the air. She is weeping and appears to be very distressed about something."
@@ -871,7 +871,7 @@
 			(11
 				(gGame givePoints: 1)
 				(gEgo
-					get: 17 ; handkerchief
+					get: handkerchiefReplacement ; handkerchief
 					oldScaleSignal: 0
 					reset: 7
 					setScale: FixedScaler 100

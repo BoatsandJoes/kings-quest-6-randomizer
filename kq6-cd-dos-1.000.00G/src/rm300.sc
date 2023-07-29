@@ -144,10 +144,10 @@
 		(sanScript init:)
 		(shimmer1 init:)
 		(shimmer2 init:)
-		(if (== ((gInventory at: 12) owner:) gCurRoomNum) ; feather
+		(if (== ((gInventory at: featherReplacement) owner:) gCurRoomNum) ; feather
 			(feather init: stopUpd:)
 		)
-		(if (== ((gInventory at: 13) owner:) gCurRoomNum) ; flower
+		(if (== ((gInventory at: flowerReplacement) owner:) gCurRoomNum) ; flower
 			(stench init: stopUpd:)
 		)
 		(gEgo actions: egoDoVerb)
@@ -314,7 +314,7 @@
 				((< (gEgo y:) 105)
 					(gMessager say: 6 12 14 1) ; "Not while Alexander is on the steps!"
 				)
-				((== ((gInventory at: 13) owner:) gCurRoomNum) ; flower
+				((== ((gInventory at: flowerReplacement) owner:) gCurRoomNum) ; flower
 					(gCurRoom setScript: pickItem 0 self)
 				)
 			)
@@ -1119,10 +1119,10 @@
 			)
 			(4
 				(if (== register feather)
-					(gEgo get: 12) ; feather
+					(gEgo get: featherReplacement) ; feather
 					(gMessager say: 11 5 0 1 self) ; "Alexander takes the feather."
 				else
-					(gEgo get: 13) ; flower
+					(gEgo get: flowerReplacement) ; flower
 					(gMessager say: 12 5 0 1 self) ; "Alexander picks the flower and is startled by its hideously strong, skunk-like odor. For a moment, he can smell nothing else."
 				)
 			)

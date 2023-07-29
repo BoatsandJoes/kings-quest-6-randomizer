@@ -59,7 +59,7 @@
 		)
 		(keyMaster init: signal: (| (keyMaster signal:) $1000) approachVerbs: 2) ; Talk
 		(cond
-			((gEgo has: 44) 0) ; skeletonKey
+			((gEgo has: skeletonKeyReplacement) 0) ; skeletonKey
 			((IsFlag 115)
 				(boneKey
 					init:
@@ -214,7 +214,7 @@
 	(method (doit)
 		(super doit:)
 		(cond
-			((or (gEgo has: 44) (IsFlag 115)) 0) ; skeletonKey
+			((or (gEgo has: skeletonKeyReplacement) (IsFlag 115)) 0) ; skeletonKey
 			((== (keyMaster view:) 6404)
 				(boneKey posn: (+ (keyMaster x:) 14) (- (keyMaster y:) 14))
 			)
@@ -683,7 +683,7 @@
 			)
 			(4
 				(keyMaster view: 645 setLoop: 0 cel: 0 setCycle: Fwd)
-				(if (and (not (gEgo has: 44)) (not (IsFlag 115))) ; skeletonKey
+				(if (and (not (gEgo has: skeletonKeyReplacement)) (not (IsFlag 115))) ; skeletonKey
 					(boneKey view: 645 setLoop: 1 cel: 1)
 					(= register 1)
 				)
@@ -691,7 +691,7 @@
 			)
 			(5
 				(= register 0)
-				(if (and (not (gEgo has: 44)) (not (IsFlag 115))) ; skeletonKey
+				(if (and (not (gEgo has: skeletonKeyReplacement)) (not (IsFlag 115))) ; skeletonKey
 					(boneKey
 						setLoop: 2
 						cel: 0
@@ -705,7 +705,7 @@
 				)
 			)
 			(6
-				(if (and (not (gEgo has: 44)) (not (IsFlag 115))) ; skeletonKey
+				(if (and (not (gEgo has: skeletonKeyReplacement)) (not (IsFlag 115))) ; skeletonKey
 					(gGlobalSound2 play:)
 					(boneKey setCycle: MCyc @local45 self)
 				else
@@ -713,7 +713,7 @@
 				)
 			)
 			(7
-				(if (and (not (gEgo has: 44)) (not (IsFlag 115))) ; skeletonKey
+				(if (and (not (gEgo has: skeletonKeyReplacement)) (not (IsFlag 115))) ; skeletonKey
 					(gGlobalSound2 play:)
 					(SetFlag 115)
 					(boneKey view: 647 loop: 0 cel: 1 noun: 7)
@@ -832,7 +832,7 @@
 				(gEgo
 					reset: 0
 					posn: (- (gEgo x:) 21) (- (gEgo y:) 5)
-					get: 44 ; skeletonKey
+					get: skeletonKeyReplacement ; skeletonKey
 				)
 				(gGame givePoints: 1)
 				(ClearFlag 115)

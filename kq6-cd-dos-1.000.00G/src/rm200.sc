@@ -134,7 +134,7 @@
 		(if (== gAct 0)
 			(= gAct 1)
 		)
-		(if (== ((gInventory at: 39) owner:) 200) ; royalRing
+		(if (== ((gInventory at: royalRingReplacement) owner:) 200) ; royalRing
 			(royalRing init:)
 		)
 		(plank init:)
@@ -337,7 +337,7 @@
 
 	(method (init)
 		(super init: &rest)
-		(if (== ((gInventory at: 9) owner:) gCurRoomNum) ; coin
+		(if (== ((gInventory at: coinReplacement) owner:) gCurRoomNum) ; coin
 			(coin init:)
 		)
 		(sand init:)
@@ -361,7 +361,7 @@
 	)
 
 	(method (dispose)
-		(if (gCast contains: 9)
+		(if (gCast contains: coinReplacement)
 			(coin dispose:)
 		)
 		(sand dispose:)
@@ -372,14 +372,14 @@
 	(method (doVerb theVerb)
 		(switch theVerb
 			(1 ; Look
-				(if (== ((gInventory at: 9) owner:) 200) ; coin
+				(if (== ((gInventory at: coinReplacement) owner:) 200) ; coin
 					(gMessager say: noun theVerb 10) ; "The box must have opened in the sea, spilling its treasure. Everything has been washed away except for one coin of Daventry."
 				else
 					(gMessager say: noun theVerb 11) ; "The box is now empty."
 				)
 			)
 			(5 ; Do
-				(if (== ((gInventory at: 9) owner:) 200) ; coin
+				(if (== ((gInventory at: coinReplacement) owner:) 200) ; coin
 					(gMessager say: noun theVerb 10) ; "There's nothing of interest in that part of the box."
 				else
 					(gMessager say: noun theVerb 11) ; "There's nothing left in the box, and the box itself is ruined."
@@ -485,7 +485,7 @@
 			(0
 				(gTheIconBar enable: 6)
 				(gGame handsOff:)
-				(gEgo get: 9) ; coin
+				(gEgo get: coinReplacement) ; coin
 				(gGame givePoints: 1)
 				(coin dispose:)
 				(= cycles 2)
@@ -837,7 +837,7 @@
 			)
 			(3
 				(gGame givePoints: 1)
-				(gEgo reset: 7 get: 39) ; royalRing
+				(gEgo reset: 7 get: royalRingReplacement) ; royalRing
 				(= cycles 2)
 			)
 			(4

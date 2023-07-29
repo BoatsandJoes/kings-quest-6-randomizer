@@ -91,10 +91,10 @@
 		)
 		(fire setCycle: Fwd init:)
 		(shopDoor init: setCycle: Beg shopDoor)
-		(if (== ((gInventory at: 45) owner:) gCurRoomNum) ; spellBook
+		(if (== ((gInventory at: spellBookReplacement) owner:) gCurRoomNum) ; spellBook
 			(spellBook init:)
 		)
-		(if (not (OneOf ((gInventory at: 1) owner:) gEgo -1)) ; boringBook
+		(if (not (OneOf ((gInventory at: boringBookReplacement) owner:) gEgo -1)) ; boringBook
 			((ScriptID 273 0) init:) ; boringBook
 		)
 		(shopOwner init:)
@@ -809,7 +809,7 @@
 	(method (doVerb theVerb)
 		(switch theVerb
 			(1 ; Look
-				(if (== ((gInventory at: 1) owner:) gCurRoomNum) ; boringBook
+				(if (== ((gInventory at: boringBookReplacement) owner:) gCurRoomNum) ; boringBook
 					(gMessager say: 2 1 4) ; "There's a small table near the door that bears a sign. The sign has undergone a number of changes. It once read "10 pence," but that was crossed out and replaced with "5 pence," then "1 pence," then "free." The sign currently reads "Take one, PLEASE.""
 				else
 					(KQ6Print
@@ -827,7 +827,7 @@
 				)
 			)
 			(5 ; Do
-				(if (!= ((gInventory at: 1) owner:) gCurRoomNum) ; boringBook
+				(if (!= ((gInventory at: boringBookReplacement) owner:) gCurRoomNum) ; boringBook
 					(gMessager say: noun theVerb 3) ; "The table is empty."
 				else
 					(gCurRoom setScript: (ScriptID 273 1)) ; takeBoringBookScr
@@ -988,7 +988,7 @@
 	(method (doVerb theVerb)
 		(if (== theVerb 1) ; Look
 			(gMessager
-				say: 5 1 (if (== ((gInventory at: 45) owner:) gCurRoomNum) 6 else 5) ; spellBook
+				say: 5 1 (if (== ((gInventory at: spellBookReplacement) owner:) gCurRoomNum) 6 else 5) ; spellBook
 			)
 		else
 			(super doVerb: theVerb &rest)

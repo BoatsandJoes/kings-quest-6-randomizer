@@ -58,7 +58,7 @@
 		(gFeatures add: theSky thePath theSteps eachElementDo: #init)
 		(redKnight addToPic:)
 		(whiteKnight addToPic:)
-		(if (and (IsFlag 39) (== ((gInventory at: 41) owner:) gCurRoomNum)) ; scarf
+		(if (and (IsFlag 39) (== ((gInventory at: scarfReplacement) owner:) gCurRoomNum)) ; scarf
 			(redScarf init:)
 		)
 		(gCurRoom setScript: egoEnters)
@@ -740,7 +740,7 @@
 			(5
 				(gEgo
 					reset: 6
-					get: 41 ; scarf
+					get: scarfReplacement ; scarf
 					posn: 163 136
 					setMotion: PolyPath 150 170 self
 				)
@@ -1556,7 +1556,7 @@
 			)
 			(21)
 			(22
-				(gEgo reset: 7 get: 10) ; egg
+				(gEgo reset: 7 get: eggReplacement) ; egg
 				(= cycles 6)
 			)
 			(23

@@ -480,7 +480,7 @@
 				((ScriptID 0 5) setReal: (gInventory at: 37) 0 3 0) ; beastTimer, ring
 				(SetFlag 46)
 				(gGame givePoints: 1)
-				(gEgo get: 37) ; ring
+				(gEgo get: ringReplacement) ; ring
 				(beast dispose:)
 				(self dispose:)
 			)
@@ -602,7 +602,7 @@
 				(gMessager say: 1 0 2 12 self) ; "You have already repaid me by your example of courage, Beauty, and by your friendship, I hope."
 			)
 			(20
-				(gEgo get: 5 hide:) ; clothes
+				(gEgo get: clothesReplacement hide:) ; clothes
 				(if (not (IsFlag 93))
 					(SetFlag 112)
 				)
@@ -671,7 +671,7 @@
 					posn: (- (beast x:) 16) (+ (beast y:) 1)
 				)
 				(gEgo
-					get: 24 ; mirror
+					get: mirrorReplacement ; mirror
 					posn: (+ (gEgo x:) 10) (- (gEgo y:) 4)
 					reset:
 					setPri: (- (beauty priority:) 1)

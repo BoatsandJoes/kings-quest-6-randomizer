@@ -124,7 +124,7 @@
 		(flower2 init:)
 		(flower3 init:)
 		(flower4 init:)
-		(if (== ((gInventory at: 49) owner:) gCurRoomNum) ; tomato
+		(if (== ((gInventory at: tomatoReplacement) owner:) gCurRoomNum) ; tomato
 			(rotTomato init:)
 		)
 		(if (and (== ((gInventory at: 33) owner:) gCurRoomNum) (> gAct 3)) ; potion
@@ -141,7 +141,7 @@
 		)
 		(gEgo actions: fluteVerb init:)
 		(gCurRoom setScript: egoEnters)
-		(if (== ((gInventory at: 18) owner:) gCurRoomNum) ; holeInTheWall
+		(if (== ((gInventory at: holeInTheWallReplacement) owner:) gCurRoomNum) ; holeInTheWall
 			(hiw init:)
 		)
 		(Load rsMESSAGE 480)
@@ -503,7 +503,7 @@
 				)
 			)
 			(5 ; Do
-				(gEgo get: 49) ; tomato
+				(gEgo get: tomatoReplacement) ; tomato
 				(proc483_2 self)
 			)
 			(else
@@ -1134,7 +1134,7 @@
 			(3
 				(gates dispose:)
 				(gCurRoom drawPic: 480 (if global169 15 else 100))
-				(if (== ((gInventory at: 49) owner:) gCurRoomNum) ; tomato
+				(if (== ((gInventory at: tomatoReplacement) owner:) gCurRoomNum) ; tomato
 					(rotTomato addToPic:)
 				)
 				(gGlobalSound4 number: 906 setLoop: 1 play:)
@@ -1627,7 +1627,7 @@
 				(flower4 view: 4852 cel: 6 setCycle: Fwd)
 				(if
 					(and
-						(== ((gInventory at: 18) owner:) gCurRoomNum) ; holeInTheWall
+						(== ((gInventory at: holeInTheWallReplacement) owner:) gCurRoomNum) ; holeInTheWall
 						(IsFlag 159)
 					)
 					(gGlobalSound4 number: 483 setLoop: 1 play:)

@@ -281,7 +281,7 @@
 					cycleSpeed: 6
 					normal: 0
 					cycleSpeed: 6
-					get: 30 ; pearl
+					get: pearlReplacement ; pearl
 					init:
 					setScale: Scaler 100 30 126 70
 					setCycle: Beg self

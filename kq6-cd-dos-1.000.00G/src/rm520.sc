@@ -103,7 +103,7 @@
 		else
 			(squirrel init:)
 		)
-		(if (== ((gInventory at: 19) owner:) gCurRoomNum) ; huntersLamp
+		(if (== ((gInventory at: huntersLampReplacement) owner:) gCurRoomNum) ; huntersLamp
 			(theHuntersLamp init:)
 		)
 		(gEgo setScale: Scaler 100 50 184 72)
@@ -349,7 +349,7 @@
 			(3
 				(gGame handsOn:)
 				(gEgo reset: 1)
-				(gEgo get: 19) ; huntersLamp
+				(gEgo get: huntersLampReplacement) ; huntersLamp
 				(gGame givePoints: 1)
 				(= local1 0)
 				(self dispose:)

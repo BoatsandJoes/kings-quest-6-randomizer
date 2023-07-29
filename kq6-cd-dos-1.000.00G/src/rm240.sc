@@ -414,7 +414,7 @@
 						(cond
 							((and (IsFlag 110) (not (IsFlag 111)))
 								(= register 1)
-								(gEgo get: 51) ; ink
+								(gEgo get: inkReplacement) ; ink
 								(SetFlag 111)
 								38
 							)

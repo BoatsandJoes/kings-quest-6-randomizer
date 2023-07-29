@@ -365,7 +365,7 @@
 	(method (doVerb theVerb)
 		(switch theVerb
 			(5 ; Do
-				(if (gEgo has: 22) ; milk
+				(if (gEgo has: milkReplacement) ; milk
 					(++ local1)
 					(gMessager say: 9 5 20 1) ; "Alexander already has a bottle of milk. One is enough to carry around."
 				else
@@ -402,7 +402,7 @@
 	(method (doVerb theVerb)
 		(switch theVerb
 			(5 ; Do
-				(if (gEgo has: 22) ; milk
+				(if (gEgo has: milkReplacement) ; milk
 					(gMessager say: 9 5 20 1) ; "Alexander already has a bottle of milk. One is enough to carry around."
 				else
 					(gMessager say: 9 5 19 1) ; "Alexander takes a bottle of milk from the milkweed bush."
@@ -926,7 +926,7 @@
 				(gEgo
 					reset: 6
 					posn: 53 133
-					get: 22 ; milk
+					get: milkReplacement ; milk
 					setMotion: PolyPath 79 145 self
 				)
 			)

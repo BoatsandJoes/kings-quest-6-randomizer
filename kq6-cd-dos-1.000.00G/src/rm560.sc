@@ -60,7 +60,7 @@
 		(doors init: approachVerbs: 1 5 2) ; Look, Do, Talk
 		(trees init: approachVerbs: 2) ; Talk
 		(roomPath init:)
-		(if (== ((gInventory at: 42) owner:) 560) ; scythe
+		(if (== ((gInventory at: scytheReplacement) owner:) 560) ; scythe
 			(scythe init: stopUpd: setPri: 13)
 		)
 		(gCurRoom setScript: egoEnters)
@@ -222,7 +222,7 @@
 			((!= theVerb 5) ; Do
 				(super doVerb: theVerb &rest)
 			)
-			((!= ((gInventory at: 6) owner:) 560) ; coal
+			((!= ((gInventory at: coalReplacement) owner:) 560) ; coal
 				(gMessager say: noun theVerb 6)
 			)
 			(else
@@ -351,7 +351,7 @@
 			)
 			(3
 				(gGame givePoints: 1)
-				(gEgo get: 6 reset:) ; coal
+				(gEgo get: coalReplacement reset:) ; coal
 				(gMessager say: 5 5 5 1 self) ; "Alexander reaches into the fire pit and takes a lump of coal."
 			)
 			(4
@@ -386,7 +386,7 @@
 				)
 			)
 			(2
-				(gEgo get: 42) ; scythe
+				(gEgo get: scytheReplacement) ; scythe
 				(gGame givePoints: 1)
 				(gMessager say: 4 5 0 1 self) ; "Alexander takes the scythe."
 			)

@@ -93,7 +93,7 @@
 				(gGame givePoints: 1)
 				(gGlobalSound4 stop:)
 				((ScriptID 480 1) dispose:) ; hiw
-				(gEgo get: 18 setCycle: End self) ; holeInTheWall
+				(gEgo get: holeInTheWallReplacement setCycle: End self) ; holeInTheWall
 			)
 			(6
 				(gEgo posn: 273 87 reset: 7)

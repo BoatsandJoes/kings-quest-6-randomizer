@@ -109,14 +109,14 @@
 	(method (doVerb theVerb)
 		(switch theVerb
 			(1 ; Look
-				(if (gEgo has: 28) ; ticket
+				(if (gEgo has: ticketReplacement) ; ticket
 					(gMessager say: noun theVerb 1) ; "The spirits of Queen Allaria and King Caliphim continue their wandering. The queen acts as a silent guardian over the distraught, despairing king."
 				else
 					(gMessager say: noun theVerb 2) ; "Restless spirits are bound to the surface of the Underworld. Chained by earthly cares, they are unable to go below."
 				)
 			)
 			(2 ; Talk
-				(if (gEgo has: 28) ; ticket
+				(if (gEgo has: ticketReplacement) ; ticket
 					(gMessager say: noun theVerb 1) ; "The queen has already given Alexander her advice, and the king is too distressed to even notice Alexander's presence."
 				else
 					(gGame handsOff:)
@@ -350,7 +350,7 @@
 				(gEgo normal: 0 view: 626 setLoop: 5 cel: 0)
 			)
 			(5
-				(gEgo get: 28) ; ticket
+				(gEgo get: ticketReplacement) ; ticket
 				(gGame givePoints: 1)
 				(queen setCycle: Beg self)
 			)

@@ -23,7 +23,7 @@
 		(proc401_3)
 		(super init: &rest)
 		(theCorpseNorth init: stopUpd:)
-		(if (== ((gInventory at: 7) owner:) gCurRoomNum) ; deadMansCoin
+		(if (== ((gInventory at: deadMansCoinReplacement) owner:) gCurRoomNum) ; deadMansCoin
 			(theGlint init:)
 		)
 		(gCurRoom setScript: (ScriptID 30 1)) ; walkIn
@@ -171,7 +171,7 @@
 				(gEgo setCycle: Beg self)
 			)
 			(4
-				(if (!= ((gInventory at: 7) owner:) gCurRoomNum) ; deadMansCoin
+				(if (!= ((gInventory at: deadMansCoinReplacement) owner:) gCurRoomNum) ; deadMansCoin
 					(gMessager say: 8 5 0 1 self 400) ; "Alexander examines the stone shelf and the ancient bones, but finds nothing except the dust of the grave."
 				else
 					(gMessager say: 13 5 0 1 self 400) ; "Alexander finds two coins on the skeleton's eyes. He takes the old coins."
@@ -179,9 +179,9 @@
 			)
 			(5
 				(gEgo reset: 3)
-				(if (== ((gInventory at: 7) owner:) gCurRoomNum) ; deadMansCoin
+				(if (== ((gInventory at: deadMansCoinReplacement) owner:) gCurRoomNum) ; deadMansCoin
 					(gGame givePoints: 1)
-					(gEgo get: 7) ; deadMansCoin
+					(gEgo get: deadMansCoinReplacement) ; deadMansCoin
 					(theDeadMansCoin dispose:)
 					(theGlint dispose:)
 				)

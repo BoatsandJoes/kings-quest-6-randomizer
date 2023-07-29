@@ -692,7 +692,7 @@
 	(properties
 		message 42
 		noun 1
-		owner 270
+		owner boringBookOwnerReplacement
 	)
 
 	(method (doVerb theVerb)
@@ -713,7 +713,7 @@
 		cel 1
 		message 39
 		noun 4
-		owner 510
+		owner brickOwnerReplacement
 	)
 )
 
@@ -722,7 +722,7 @@
 		cel 2
 		message 29
 		noun 5
-		owner 280
+		owner brushOwnerReplacement
 	)
 
 	(method (cue)
@@ -776,7 +776,7 @@
 		cel 15
 		message 15
 		noun 60
-		owner 530
+		owner hairOwnerReplacement
 	)
 
 	(method (doVerb theVerb)
@@ -796,7 +796,7 @@
 		cel 4
 		message 45
 		noun 6
-		owner 540
+		owner clothesOwnerReplacement
 	)
 
 	(method (doVerb theVerb)
@@ -854,7 +854,7 @@
 		cel 5
 		message 46
 		noun 7
-		owner 560
+		owner coalOwnerReplacement
 	)
 )
 
@@ -863,7 +863,7 @@
 		cel 6
 		message 7
 		noun 9
-		owner 430
+		owner deadMansCoinOwnerReplacement
 	)
 )
 
@@ -872,7 +872,7 @@
 		cel 7
 		message 8
 		noun 10
-		owner 440
+		owner daggerOwnerReplacement
 	)
 )
 
@@ -881,7 +881,7 @@
 		cel 8
 		message 40
 		noun 8
-		owner 200
+		owner coinOwnerReplacement
 	)
 )
 
@@ -890,7 +890,7 @@
 		cel 9
 		message 19
 		noun 52
-		owner 490
+		owner eggOwnerReplacement
 	)
 
 	(method (doVerb theVerb)
@@ -911,7 +911,7 @@
 		cel 4
 		message 51
 		noun 63
-		owner 415
+		owner skullOwnerReplacement
 	)
 
 	(method (cue)
@@ -1178,7 +1178,7 @@
 		cel 11
 		message 30
 		noun 13
-		owner 300
+		owner featherOwnerReplacement
 	)
 
 	(method (doVerb theVerb)
@@ -1198,7 +1198,7 @@
 		cel 12
 		message 47
 		noun 14
-		owner 300
+		owner flowerOwnerReplacement
 	)
 )
 
@@ -1207,7 +1207,7 @@
 		cel 13
 		message 31
 		noun 15
-		owner 280
+		owner fluteOwnerReplacement
 	)
 )
 
@@ -1216,7 +1216,7 @@
 		cel 14
 		message 48
 		noun 16
-		owner 650
+		owner gauntletOwnerReplacement
 	)
 )
 
@@ -1225,7 +1225,7 @@
 		cel 3
 		message 18
 		noun 59
-		owner 210
+		owner cassimaHairOwnerReplacement
 	)
 
 	(method (doVerb theVerb)
@@ -1245,7 +1245,7 @@
 		loop 1
 		message 50
 		noun 18
-		owner 680
+		owner handkerchiefOwnerReplacement
 	)
 )
 
@@ -1255,7 +1255,7 @@
 		cel 1
 		message 25
 		noun 19
-		owner 480
+		owner holeInTheWallOwnerReplacement
 	)
 )
 
@@ -1265,7 +1265,7 @@
 		cel 2
 		message 43
 		noun 23
-		owner 520
+		owner huntersLampOwnerReplacement
 	)
 
 	(method (doVerb theVerb)
@@ -1394,7 +1394,7 @@
 		cel 3
 		message 61
 		noun 29
-		owner 780
+		owner letterOwnerReplacement
 	)
 
 	(method (doVerb theVerb)
@@ -1416,7 +1416,7 @@
 		cel 4
 		message 52
 		noun 20
-		owner 480
+		owner lettuceOwnerReplacement
 	)
 
 	(method (cue)
@@ -1472,7 +1472,7 @@
 		cel 7
 		message 12
 		noun 31
-		owner 280
+		owner mapOwnerReplacement
 	)
 
 	(method (doVerb theVerb)
@@ -1506,7 +1506,7 @@
 		cel 8
 		message 62
 		noun 32
-		owner 470
+		owner milkOwnerReplacement
 	)
 )
 
@@ -1516,7 +1516,7 @@
 		cel 9
 		message 63
 		noun 33
-		owner 280
+		owner mintOwnerReplacement
 	)
 )
 
@@ -1526,7 +1526,7 @@
 		cel 10
 		message 13
 		noun 34
-		owner 540
+		owner mirrorOwnerReplacement
 	)
 )
 
@@ -1536,7 +1536,7 @@
 		cel 11
 		message 57
 		noun 25
-		owner 240
+		owner newLampOwnerReplacement
 	)
 
 	(method (doVerb theVerb)
@@ -1577,7 +1577,7 @@
 		cel 1
 		message 37
 		noun 55
-		owner 280
+		owner nightingaleOwnerReplacement
 	)
 )
 
@@ -1587,7 +1587,7 @@
 		cel 7
 		message 49
 		noun 17
-		owner 600
+		owner ticketOwnerReplacement
 	)
 )
 
@@ -1597,7 +1597,7 @@
 		cel 1
 		message 94
 		noun 57
-		owner 500
+		owner participleOwnerReplacement
 	)
 
 	(method (doVerb theVerb &tmp temp0 temp1 temp2)
@@ -1668,7 +1668,7 @@
 		cel 4
 		message 66
 		noun 37
-		owner 450
+		owner pearlOwnerReplacement
 	)
 )
 
@@ -1678,7 +1678,7 @@
 		cel 5
 		message 67
 		noun 38
-		owner 390
+		owner peppermintOwnerReplacement
 	)
 )
 
@@ -1688,7 +1688,7 @@
 		cel 6
 		message 65
 		noun 36
-		owner 210
+		owner noteOwnerReplacement
 	)
 
 	(method (doVerb theVerb)
@@ -1710,7 +1710,7 @@
 		cel 7
 		message 14
 		noun 12
-		owner 480
+		owner potionOwnerReplacement
 	)
 )
 
@@ -1720,7 +1720,7 @@
 		cel 8
 		message 68
 		noun 39
-		owner 290
+		owner rabbitFootOwnerReplacement
 	)
 )
 
@@ -1730,7 +1730,7 @@
 		cel 10
 		message 33
 		noun 40
-		owner 210
+		owner ribbonOwnerReplacement
 	)
 
 	(method (doVerb theVerb)
@@ -1789,7 +1789,7 @@
 		cel 11
 		message 27
 		noun 2
-		owner 460
+		owner riddleBookOwnerReplacement
 	)
 
 	(method (doVerb theVerb)
@@ -1809,7 +1809,7 @@
 		cel 12
 		message 69
 		noun 41
-		owner 540
+		owner ringOwnerReplacement
 	)
 
 	(method (cue)
@@ -1833,7 +1833,7 @@
 		cel 13
 		message 71
 		noun 43
-		owner 530
+		owner roseOwnerReplacement
 	)
 )
 
@@ -1843,7 +1843,7 @@
 		cel 14
 		message 70
 		noun 42
-		owner 200
+		owner royalRingOwnerReplacement
 	)
 )
 
@@ -1853,7 +1853,7 @@
 		cel 15
 		message 24
 		noun 56
-		owner 380
+		owner sacredWaterOwnerReplacement
 	)
 
 	(method (doVerb theVerb)
@@ -1876,7 +1876,7 @@
 		loop 3
 		message 72
 		noun 45
-		owner 490
+		owner scarfOwnerReplacement
 	)
 )
 
@@ -1886,7 +1886,7 @@
 		cel 1
 		message 16
 		noun 46
-		owner 560
+		owner scytheOwnerReplacement
 	)
 )
 
@@ -1896,7 +1896,7 @@
 		cel 2
 		message 17
 		noun 47
-		owner 408
+		owner shieldOwnerReplacement
 	)
 )
 
@@ -1906,7 +1906,7 @@
 		cel 3
 		message 35
 		noun 48
-		owner 670
+		owner skeletonKeyOwnerReplacement
 	)
 )
 
@@ -1916,7 +1916,7 @@
 		cel 5
 		message 28
 		noun 3
-		owner 270
+		owner spellBookOwnerReplacement
 	)
 
 	(method (doVerb theVerb)
@@ -1951,7 +1951,7 @@
 		cel 6
 		message 44
 		noun 53
-		owner 480
+		owner teaCupOwnerReplacement
 	)
 
 	(method (doVerb theVerb)
@@ -2153,7 +2153,7 @@
 		cel 2
 		message 32
 		noun 30
-		owner 270
+		owner poemOwnerReplacement
 	)
 
 	(method (doVerb theVerb)
@@ -2175,7 +2175,7 @@
 		cel 8
 		message 20
 		noun 54
-		owner 280
+		owner tinderBoxOwnerReplacement
 	)
 )
 
@@ -2184,7 +2184,7 @@
 		loop 6
 		message 34
 		noun 44
-		owner 480
+		owner tomatoOwnerReplacement
 	)
 
 	(method (doVerb theVerb &tmp temp0 temp1 temp2)
@@ -2263,7 +2263,7 @@
 		cel 10
 		message 85
 		noun 11
-		owner 450
+		owner sentenceOwnerReplacement
 	)
 )
 
@@ -2273,7 +2273,7 @@
 		cel 12
 		message 83
 		noun 68
-		owner 240
+		owner inkOwnerReplacement
 	)
 
 	(method (doVerb theVerb)

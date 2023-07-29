@@ -155,7 +155,7 @@
 		(oyster init:)
 		(if
 			(or
-				(!= ((gInventory at: 30) owner:) gCurRoomNum) ; pearl
+				(!= ((gInventory at: pearlReplacement) owner:) gCurRoomNum) ; pearl
 				((ScriptID 40 0) oysterDozing:) ; rWonder
 			)
 			(oyster setCel: 2)
@@ -189,7 +189,7 @@
 		(shimmer2 init:)
 		(snoreSong play:)
 		(snooze1 init: setCycle: Fwd)
-		(if (== ((gInventory at: 50) owner:) gCurRoomNum) ; sentence
+		(if (== ((gInventory at: sentenceReplacement) owner:) gCurRoomNum) ; sentence
 			(mySentence init: setCycle: Fwd setScript: sentenceFloat)
 		)
 		(gGlobalSound number: 915 setLoop: -1 play:)
@@ -202,7 +202,7 @@
 	(method (dispose)
 		(ClearFlag 59)
 		(LoadMany 0 455 456 4561 457 458)
-		(if (!= ((gInventory at: 30) owner:) gCurRoomNum) ; pearl
+		(if (!= ((gInventory at: pearlReplacement) owner:) gCurRoomNum) ; pearl
 			((ScriptID 40 0) oysterDozing: 0) ; rWonder
 		)
 		((ScriptID 40 0) setScript: 0) ; rWonder
@@ -411,7 +411,7 @@
 					(local5
 						(gMessager say: 1 0 1 1) ; "Alexander can't do anything with the oyster now! The gnomes require all his attention!"
 					)
-					((!= ((gInventory at: 30) owner:) gCurRoomNum) ; pearl
+					((!= ((gInventory at: pearlReplacement) owner:) gCurRoomNum) ; pearl
 						(gMessager say: 1 1 7 1) ; "The little oyster is sleeping peacefully now that Alexander's removed the irritating pearl."
 					)
 					(((ScriptID 40 0) oysterDozing:) ; rWonder
@@ -426,7 +426,7 @@
 				(cond
 					(
 						(or
-							(!= ((gInventory at: 30) owner:) gCurRoomNum) ; pearl
+							(!= ((gInventory at: pearlReplacement) owner:) gCurRoomNum) ; pearl
 							((ScriptID 40 0) oysterDozing:) ; rWonder
 						)
 						(gMessager say: 1 5 2 1) ; "Alexander doesn't want to wake up the sleeping oyster."
@@ -459,7 +459,7 @@
 			(30 ; feather
 				(if
 					(or
-						(!= ((gInventory at: 30) owner:) gCurRoomNum) ; pearl
+						(!= ((gInventory at: pearlReplacement) owner:) gCurRoomNum) ; pearl
 						((ScriptID 40 0) oysterDozing:) ; rWonder
 					)
 					(gMessager say: 1 30 2 1) ; "The oyster would not appreciate being tickled awake!"
@@ -478,7 +478,7 @@
 					)
 					(
 						(or
-							(!= ((gInventory at: 30) owner:) gCurRoomNum) ; pearl
+							(!= ((gInventory at: pearlReplacement) owner:) gCurRoomNum) ; pearl
 							((ScriptID 40 0) oysterDozing:) ; rWonder
 						)
 						(gMessager say: 1 5 2 1) ; "Alexander doesn't want to wake up the sleeping oyster."
@@ -536,7 +536,7 @@
 			(1
 				(if
 					(or
-						(!= ((gInventory at: 30) owner:) gCurRoomNum) ; pearl
+						(!= ((gInventory at: pearlReplacement) owner:) gCurRoomNum) ; pearl
 						((ScriptID 40 0) oysterDozing:) ; rWonder
 					)
 					(gMessager say: 1 31 2 1 self) ; "Alexander doesn't want to disturb the oyster now that he's finally asleep!"
@@ -613,7 +613,7 @@
 				(if
 					(and
 						(== register 2)
-						(== ((gInventory at: 30) owner:) gCurRoomNum) ; pearl
+						(== ((gInventory at: pearlReplacement) owner:) gCurRoomNum) ; pearl
 						(not (IsFlag 107))
 					)
 					(gMessager say: 1 2 10 1 self) ; "Why aren't you asleep like the other oysters?"
@@ -625,7 +625,7 @@
 				(if
 					(and
 						(== register 2)
-						(== ((gInventory at: 30) owner:) gCurRoomNum) ; pearl
+						(== ((gInventory at: pearlReplacement) owner:) gCurRoomNum) ; pearl
 					)
 					(oyster setPri: 12)
 				)
@@ -637,7 +637,7 @@
 						(cond
 							(
 								(or
-									(!= ((gInventory at: 30) owner:) gCurRoomNum) ; pearl
+									(!= ((gInventory at: pearlReplacement) owner:) gCurRoomNum) ; pearl
 									((ScriptID 40 0) oysterDozing:) ; rWonder
 								)
 								(gMessager say: 1 5 2 1 self) ; "Alexander doesn't want to wake up the sleeping oyster."
@@ -653,7 +653,7 @@
 					)
 					(42
 						(cond
-							((!= ((gInventory at: 30) owner:) gCurRoomNum) ; pearl
+							((!= ((gInventory at: pearlReplacement) owner:) gCurRoomNum) ; pearl
 								(gMessager say: 1 42 7 1 self) ; "The oyster is already asleep, and if Alexander reads anymore of THAT book HE will fall asleep."
 							)
 							((not (IsFlag 107))
@@ -1914,7 +1914,7 @@
 				(gEgo
 					reset: 2
 					posn: (+ (gEgo x:) 2) (- (gEgo y:) 11)
-					get: 50 ; sentence
+					get: sentenceReplacement ; sentence
 				)
 				(= cycles 8)
 			)

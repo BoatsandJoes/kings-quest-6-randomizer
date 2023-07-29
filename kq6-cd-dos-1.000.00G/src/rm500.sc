@@ -465,7 +465,7 @@
 			)
 			(6
 				(dangle hide:)
-				(gEgo put: 50 500 get: 29 reset: 4 show:) ; sentence, participle
+				(gEgo put: 50 500 get: participleReplacement reset: 4 show:) ; sentence, participle
 				(gGlobalSound4 fade:)
 				(gGame givePoints: 2)
 				(SetFlag 45)
