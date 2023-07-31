@@ -4,4 +4,4 @@ import sys
 
 config = fileReaderWriter.getConfig()
 game = randomizer.createWorld(config)
-# todo write game to files: game files, spoiler solution, shop spoiler
+fileReaderWriter.writeGameToFiles(game)
