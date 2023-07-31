@@ -33,7 +33,7 @@ huntersLamp 520 19
 letter 780 20
 lettuce 480 (has a special timer)
 milk 470 22
-mint 280
+mint 280 23
 mirror 540 24
 newLamp 240
 nail (no owner by default in vanilla. It becomes 880 when the picture is removed from the wall) 26 (not randomized for now, due to 1. weird owner behavior 2. it's logically just a duplicate of skeleton key and 3. the location is short path only anyway. A duplicate skeleton key would be nice, though.)
@@ -43,7 +43,7 @@ participle 500 29
 pearl 450 30
 peppermint 390 31
 note 210
-potion 480
+potion 480 33
 rabbitFoot 290 34
 ribbon 210
 riddleBook 460 36
@@ -56,7 +56,7 @@ scythe 560 42
 shield 408 43
 skeletonKey 670 44
 spellBook 270 45
-teaCup 480
+teaCup 480 46
 poem 270 47
 tinderBox 280
 tomato 480 49
@@ -75,7 +75,7 @@ Locations:
 	    requires: none
 		locations:
 		    beach 1 & beach 2
-			mint
+			mint (requires act 1 or 2)
 			ferry cabin
 			lamp (requires hunters lamp, act 1 or 5, and you have to be done with the rain spell if you want to keep access to the embers (and thus the underworld and thus the river styx and thus the long path castle))
 	Merchant trades

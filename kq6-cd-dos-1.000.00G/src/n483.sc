@@ -310,11 +310,11 @@
 			)
 			(4
 				(if (== register 1)
-					(gEgo reset: 0 setMotion: PolyPath 197 116 self get: 46) ; teaCup
+					(gEgo reset: 0 setMotion: PolyPath 197 116 self get: teaCupReplacement) ; teaCup
 				else
 					(gEgo
 						posn: (- (gEgo x:) 15) (- (gEgo y:) 6)
-						get: 33 ; potion
+						get: potionReplacement ; potion
 						reset: 0
 					)
 					(= cycles 2)

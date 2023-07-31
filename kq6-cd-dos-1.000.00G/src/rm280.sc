@@ -596,7 +596,7 @@
 					view: 2813
 					loop: 0
 					posn: 176 133
-					get: 23 ; mint
+					get: mintReplacement ; mint
 					setCycle: End self
 				)
 			)
@@ -641,7 +641,7 @@
 		(switch theVerb
 			(5 ; Do
 				(if (< gAct 3)
-					(if (not (gEgo has: 23)) ; mint
+					(if (not (gEgo has: mintReplacement)) ; mint
 						(gCurRoom setScript: takeMintScr)
 					else
 						(gMessager say: noun theVerb 35) ; "Alexander already has a mint. He'd prefer to leave some for the other customers."

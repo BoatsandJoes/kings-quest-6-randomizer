@@ -127,14 +127,14 @@
 		(if (== ((gInventory at: tomatoReplacement) owner:) gCurRoomNum) ; tomato
 			(rotTomato init:)
 		)
-		(if (and (== ((gInventory at: 33) owner:) gCurRoomNum) (> gAct 3)) ; potion
+		(if (and (== ((gInventory at: potionReplacement) owner:) gCurRoomNum) (> gAct 3)) ; potion
 			(drinkBottle init:)
 		)
 		(brat1 init:)
 		(brat2 init:)
 		(brat3 init:)
 		(brat4 init:)
-		(if (and (IsFlag 77) (== ((gInventory at: 46) owner:) gCurRoomNum)) ; teaCup
+		(if (and (IsFlag 77) (== ((gInventory at: teaCupReplacement) owner:) gCurRoomNum)) ; teaCup
 			(myTeaCup init: stopUpd:)
 			(glint init: hide:)
 			(glintTimer setReal: glint (Random 3 6))
