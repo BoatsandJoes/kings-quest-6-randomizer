@@ -1,4 +1,5 @@
 import solver
+import random
 
 def createWorld(config):
     solution = ""
@@ -14,9 +15,9 @@ def createWorld(config):
     return result
 
 def shuffleItems(config):
-    #TODO make random
+	random.seed()
 	#TODO add logic
-    return {
+	vanillaItems = {
 		"map": 0,
 		"boringBook": 1,
 		"brick": 2,
@@ -69,4 +70,16 @@ def shuffleItems(config):
 		"tomato": 49,
 		"sentence": 50,
 		"ink": 51
+	}
+	itemIdsToRandomize = []
+	locationsToRandomize = []
+	for key in vanillaItems.keys():
+	    if config["itemsToNotShuffle"].count(key) == 0:
+		    itemIdsToRandomize.append(vanillaItems[key])
+		    locationsToRandomize.append(key)
+	result = {}
+	for location in locationsToRandomize:
+	    result[location] = itemIdsToRandomize.pop(random.randrange(0, len(itemIdsToRandomize)))
+	return {
+	    "world": result
 	}

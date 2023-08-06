@@ -10,58 +10,58 @@ Most things don't care about the current act, but some do. For example, the new 
 
 
 Items (name, owner, id, verb) (some ids are missing: this means that I haven't replaced them in the scripts yet) (verbs need to be added for most items. Will do this when ids are done):
-map 280
-boringBook 270 1 (may appear to respawn if item is lost, but actually the respawned book cannot be picked up. This is based on code inspection: confirm ingame)
-brick 510 2
+map 280  12
+boringBook 270 1 42 (may seem to respawn if item is lost, but actually the respawned book cannot be picked up. This is based on code inspection: confirm ingame)
+brick 510 2 39
 brush 280 3 29
-hair 530
-clothes 540 5
-coal 560 6
-deadMansCoin 430 7
-dagger 440 8
-coin 200 9
-egg 490 10
-skull 415 11
-feather 300 12
-flower 300 13
+hair 530  15
+clothes 540 5 45
+coal 560 6 46
+deadMansCoin 430 7 7
+dagger 440 8 8
+coin 200 9 40
+egg 490 10 19
+skull 415 11 51
+feather 300 12 30
+flower 300 13 47
 flute 280 14 31
-gauntlet 650 15
-cassimaHair 210
-handkerchief 680 17
-holeInTheWall 480 18
-huntersLamp 520 19
-letter 780 20
-lettuce 480 (has a special timer)
-milk 470 22
-mint 280 23
-mirror 540 24
-newLamp 240
-nail (no owner by default in vanilla. It becomes 880 when the picture is removed from the wall) 26 (not randomized for now, due to 1. weird owner behavior 2. it's logically just a duplicate of skeleton key and 3. the location is short path only anyway. A duplicate skeleton key would be nice, though.)
+gauntlet 650 15 48
+cassimaHair 210  18
+handkerchief 680 17 50
+holeInTheWall 480 18 25
+huntersLamp 520 19 43
+letter 780 20 61
+lettuce 480  52 (has a special timer. Verb for melting lettuce is 53, melted 54)
+milk 470 22 62
+mint 280 23 63
+mirror 540 24 13
+newLamp 240  96 (Not sure of the verb but it's one of these 57 58 59 60 96 56)
+nail 26 880 64 (no owner by default in vanilla. It becomes 880 when the picture is removed from the wall) 26 (not randomized for now, due to 1. weird owner behavior 2. it's logically just a duplicate of skeleton key and 3. the location is short path only anyway. A duplicate skeleton key would be nice, though.)
 nightingale 280 27 37
-ticket 600 28
-participle 500 29
-pearl 450 30
-peppermint 390 31 (changed to pepperMint so that mint would not regex match it)
-note 210
-potion 480 33
-rabbitFoot 290 34
-ribbon 210
-riddleBook 460 36
-ring 540 37 (has some special logic for beast timer that I have not tested)
-rose 530 38
-royalRing 200 39
-sacredWater 380 40
-scarf 490 41
-scythe 560 42
-shield 408 43
-skeletonKey 670 44
-spellBook 270 45
-teaCup 480 46
-poem 270 47
+ticket 600 28 49
+participle 500 29 94
+pearl 450 30 66
+peppermint 390 31 67 (changed to pepperMint so that mint would not regex match it)
+note 210  65
+potion 480 33 14
+rabbitFoot 290 34 68
+ribbon 210  33
+riddleBook 460 36 27
+ring 540 37 69 (has some special logic for beast timer that I have not tested)
+rose 530 38 71
+royalRing 200 39 70
+sacredWater 380 40 24
+scarf 490 41 72
+scythe 560 42 16
+shield 408 43 17
+skeletonKey 670 44 35
+spellBook 270 45 28
+teaCup 480 46 44
+poem 270 47 32
 tinderBox 280 48 20
-tomato 480 49
-sentence 450 50
-ink 240 51
+tomato 480 49 34
+sentence 450 50 85
+ink 240 51 83
 
 Item temporary or permanent loss of access (items that are no longer useful not included, but those matter for pawn shop):
 If you have an item checked out from the shopkeeper and lose it, you can no longer access the rest (unless MAYBE if you reobtain the coins; not sure. Better test)

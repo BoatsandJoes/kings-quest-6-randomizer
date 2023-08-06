@@ -2,7 +2,7 @@
 
 This is a (under construction) program that shuffles the locations of items in King's Quest 6. You still have to fulfill all of the normal conditions to pick up an item, but when it enters your inventory, it will be a different item from usual. This creates brand-new surprising ways to softlock yourself, so as always in King's Quest VI, make a lot of saves! The randomizer is designed to always generate a long-path-beatable game, but there may be some oversights in the logic. The logic does not care if you can finish short path or not, but it will often be possible.
 
-Any container (such as the teacup) will be filled at the USUAL LOCATION. These liquids are technically not items unto themselves, and they are not shuffled (at least in the first version of the randomizer).
+Any container (such as the teacup) will be filled at the USUAL LOCATION. These liquids are technically not items unto themselves, and they are not shuffled (at least in the first version of the randomizer). The nail is also not shuffled (that location is short path only), nor are 4 of the 5 lamps for sale (only the "correct" one is shuffled).
 
 All items are USED in the same way as the vanilla game, with one exception. When trading items BACK to the shopkeeper after obtaining them, he will only take the SHUFFLED item. So for example, if the nightingale has been shuffled to be a handkerchief instead, you need to trade back the handkerchief to get a different item, not the nightingale. This applies to whatever replaces the map as well as whatever replaces the items on the counter. Be careful to not consume these items too early!
 

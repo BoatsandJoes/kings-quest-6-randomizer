@@ -7,6 +7,17 @@ def getConfig():
     return {
 	    "hardLogic": true,
 	    "shuffleFluids": false
+		"itemsToNotShuffle": [
+		    "nail",
+			"map",
+			"royalRing",
+			"hair",
+			"cassimaHair",
+			"lettuce",
+			"newLamp",
+			"note",
+			"ribbon"
+		]
 	}
 
 def writeGameToFiles(game):
@@ -65,115 +76,115 @@ def writeGameToFiles(game):
 		50: "sentence",
 		51: "ink"
 	}
-	# Map of vanilla item id to vanilla verb id for that item TODO
+	# Map of vanilla item id to vanilla verb id for that item
 	verbs = {
-	    0: ,
-		1: ,
-		2: ,
+	    0: 12,
+		1: 42,
+		2: 39,
 	    3: 29,
-		4: ,
-		5: ,
-	    6: ,
-	    7: ,
-	    8: ,
-	    9: ,
-	    10: ,
-	    11: ,
-	    12: ,
-	    13: ,
+		4: 15,
+		5: 45,
+	    6: 46,
+	    7: 7,
+	    8: 8,
+	    9: 40,
+	    10: 19,
+	    11: 51,
+	    12: 30,
+	    13: 47,
 	    14: 31,
-	    15: ,
-	    16: ,
-	    17: ,
-	    18: ,
-	    19: ,
-	    20: ,
-	    21: ,
-	    22: ,
-	    23: ,
-	    24: ,
-	    25: ,
-	    26: ,
+	    15: 48,
+	    16: 18,
+	    17: 50,
+	    18: 25,
+	    19: 43,
+	    20: 61,
+	    21: 52, #Melting is 53, melted 54
+	    22: 62,
+	    23: 63,
+	    24: 13,
+	    25: 96, #One of these 57 58 59 60 96 56
+	    26: 64,
 	    27: 37,
-	    28: ,
-	    29: ,
-	    30: ,
-	    31: ,
-	    32: ,
-	    33: ,
-	    34: ,
-	    35: ,
-	    36: ,
-	    37: ,
-	    38: ,
-	    39: ,
-	    40: ,
-	    41: ,
-	    42: ,
-	    43: ,
-	    44: ,
-	    45: ,
-	    46: ,
-	    47: ,
+	    28: 49,
+	    29: 94,
+	    30: 66,
+	    31: 67,
+	    32: 65,
+	    33: 14,
+	    34: 68,
+	    35: 33,
+	    36: 27,
+	    37: 69,
+	    38: 71,
+	    39: 70,
+	    40: 24,
+	    41: 72,
+	    42: 16,
+	    43: 17,
+	    44: 35,
+	    45: 28,
+	    46: 44,
+	    47: 32,
 	    48: 20,
-	    49: ,
-	    50: ,
-	    51: 
+	    49: 34,
+	    50: 85,
+	    51: 83
 	}
-	# Map of item string key to vanilla owner id for that item TODO
+	# Map of item string key to vanilla owner id for that item
 	vanillaOwners = {
 	    "map": 280,
-		"boringBook": 
-		"brick": 
-		"brush": 280
-		"hair": 
-		"clothes": 
-		"coal": 
-		"deadMansCoin": 
-		"dagger": 
-		"coin": 200
-		"egg": 
-		"skull": 
-		"feather": 
-		"flower": 
-		"flute": 280
-		"gauntlet": 
-		"cassimaHair": 
-		"handkerchief": 
-		"holeInTheWall": 
-		"huntersLamp": 
-		"letter": 
-		"lettuce": 
-		"milk": 
-		"mint": 
-		"mirror": 
-		"newLamp": 
-		"nail": 
-		"nightingale": 280
-		"ticket": 
-		"participle": 
-		"pearl": 
-		"pepperMint": 
-		"note": 
-		"potion": 
-		"rabbitFoot": 
-		"ribbon": 
-		"riddleBook": 
-		"ring": 
-		"rose": 
-		"royalRing": 200
-		"sacredWater": 
-		"scarf": 
-		"scythe": 
-		"shield": 
-		"skeletonKey": 
-		"spellBook": 
-		"teaCup": 
-		"poem": 
-		"tinderBox": 280
-		"tomato": 
-		"sentence": 
-		"ink": 
+		"boringBook": 270,
+		"brick": 510,
+		"brush": 280,
+		"hair": 530,
+		"clothes": 540,
+		"coal": 560,
+		"deadMansCoin": 430,
+		"dagger": 440,
+		"coin": 200,
+		"egg": 490,
+		"skull": 415,
+		"feather": 300,
+		"flower": 300,
+		"flute": 280,
+		"gauntlet": 650,
+		"cassimaHair": 210,
+		"handkerchief": 680,
+		"holeInTheWall": 480,
+		"huntersLamp": 520,
+		"letter": 780,
+		"lettuce": 480,
+		"milk": 470,
+		"mint": 280,
+		"mirror": 540,
+		"newLamp": 240,
+		"nail": 880, #may be 0 actually; nail owner is special and I haven't fully understood how it works
+		"nightingale": 280,
+		"ticket": 600,
+		"participle": 500,
+		"pearl": 450,
+		"pepperMint": 390,
+		"note": 210,
+		"potion": 480,
+		"rabbitFoot": 290,
+		"ribbon": 210,
+		"riddleBook": 460,
+		"ring": 540,
+		"rose": 530, #Don't know why this is different from brick. I double checked it though; it's correct
+		"royalRing": 200,
+		"sacredWater": 380,
+		"scarf": 490,
+		"scythe": 560,
+		"shield": 408,
+		"skeletonKey": 670,
+		"spellBook": 270,
+		"teaCup": 480,
+		"poem": 270,
+		"tinderBox": 280,
+		"tomato": 480,
+		"sentence": 450,
+		"ink": 240
 	}
     # Map that helps replace item owners
 	# The game initializes each item with its starting room: for example, royalRing and coin are owned by room 200, the beach
