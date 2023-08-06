@@ -4,7 +4,9 @@ This is a (under construction) program that shuffles the locations of items in K
 
 Any container (such as the teacup) will be filled at the USUAL LOCATION. These liquids are technically not items unto themselves, and they are not shuffled (at least in the first version of the randomizer).
 
-The decompiled game scripts have some (under construction) item numbers and room numbers replaced with a string. The python script (under construction) decides where the items should be shuffled to, and then replaces those strings with the replacement item. The scripts can then be placed into the game folder, the game can be loaded into SCI Companion, and the randomized version of the game can be played. The scripts will only take effect if the game is run through SCI Companion: it can still be played normally outside of SCI Companion. The scripts can be replaced with newly-generated scripts to shuffle the items again.
+All items are USED in the same way as the vanilla game, with one exception. When trading items BACK to the shopkeeper after obtaining them, he will only take the SHUFFLED item. So for example, if the nightingale has been shuffled to be a handkerchief instead, you need to trade back the handkerchief to get a different item, not the nightingale. This applies to whatever replaces the map as well as whatever replaces the items on the counter. Be careful to not consume these items too early!
+
+The decompiled game scripts have some (under construction) item numbers and room numbers replaced with a string (plus verb numbers for the tradables). The python script (under construction) decides where the items should be shuffled to, and then replaces those strings with the replacement item. The scripts can then be placed into the game folder, the game can be loaded into SCI Companion, and the randomized version of the game can be played. The scripts will only take effect if the game is run through SCI Companion: it can still be played normally outside of SCI Companion. The scripts can be replaced with newly-randomized scripts to shuffle the items again.
 
 This project is built on top of SCI scripts created by Sierra and decompiled by sluicebox.
 

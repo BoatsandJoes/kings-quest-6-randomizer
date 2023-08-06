@@ -20,10 +20,10 @@
 				(gEgo
 					put:
 						(switch register
-							(0 48)
-							(3 27)
-							(1 3)
-							(2 14)
+							(0 tinderBoxReplacement)
+							(3 nightingaleReplacement)
+							(1 brushReplacement)
+							(2 fluteReplacement)
 						)
 						gCurRoomNum
 				)
@@ -139,10 +139,10 @@
 				(gEgo
 					get:
 						(switch register
-							(0 48)
-							(3 27)
-							(1 3)
-							(2 14)
+							(0 tinderBoxReplacement)
+							(3 nightingaleReplacement)
+							(1 brushReplacement)
+							(2 fluteReplacement)
 						)
 				)
 				(switch register

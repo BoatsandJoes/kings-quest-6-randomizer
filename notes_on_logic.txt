@@ -9,11 +9,11 @@ In the vanilla game (by skipping the gnomes) and in randomizer, it is possible t
 Most things don't care about the current act, but some do. For example, the new items that spawn in the garden on the Isle of Wonder are controlled by the current act. I need to do a little more research to work out all of the act logic.
 
 
-Items (name, owner, id) (some ids are missing: this means that I haven't replaced them in the scripts yet):
+Items (name, owner, id, verb) (some ids are missing: this means that I haven't replaced them in the scripts yet) (verbs need to be added for most items. Will do this when ids are done):
 map 280
 boringBook 270 1 (may appear to respawn if item is lost, but actually the respawned book cannot be picked up. This is based on code inspection: confirm ingame)
 brick 510 2
-brush 280
+brush 280 3 29
 hair 530
 clothes 540 5
 coal 560 6
@@ -24,7 +24,7 @@ egg 490 10
 skull 415 11
 feather 300 12
 flower 300 13
-flute 280
+flute 280 14 31
 gauntlet 650 15
 cassimaHair 210
 handkerchief 680 17
@@ -37,11 +37,11 @@ mint 280 23
 mirror 540 24
 newLamp 240
 nail (no owner by default in vanilla. It becomes 880 when the picture is removed from the wall) 26 (not randomized for now, due to 1. weird owner behavior 2. it's logically just a duplicate of skeleton key and 3. the location is short path only anyway. A duplicate skeleton key would be nice, though.)
-nightingale 280
+nightingale 280 27 37
 ticket 600 28
 participle 500 29
 pearl 450 30
-peppermint 390 31
+peppermint 390 31 (changed to pepperMint so that mint would not regex match it)
 note 210
 potion 480 33
 rabbitFoot 290 34
@@ -58,7 +58,7 @@ skeletonKey 670 44
 spellBook 270 45
 teaCup 480 46
 poem 270 47
-tinderBox 280
+tinderBox 280 48 20
 tomato 480 49
 sentence 450 50
 ink 240 51
@@ -82,7 +82,7 @@ Locations:
 	    requires: none
 		locations:
 		    map & ink (requires ring)
-			ring retrade (requires pearl. map works, but singsing leaves if you don't have it)
+			ring retrade (requires pearl. map works, but singsing leaves if you don't have it. I think I will be using the replacements for the retrades though)
 			4 objects (requires coin. this logic is a complicated special case, since you can only carry 1 at a time, and if you lose it you're locked out of the others)
 		nonlocations:
 		    reanimation

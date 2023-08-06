@@ -37,16 +37,16 @@
 
 	(method (init)
 		(super init: &rest)
-		(if (== ((gInventory at: 48) owner:) gCurRoomNum) ; tinderBox
+		(if (== ((gInventory at: tinderBoxReplacement) owner:) gCurRoomNum) ; tinderBox
 			(tinderBox init:)
 		)
-		(if (== ((gInventory at: 3) owner:) gCurRoomNum) ; brush
+		(if (== ((gInventory at: brushReplacement) owner:) gCurRoomNum) ; brush
 			(paintBrush init:)
 		)
-		(if (== ((gInventory at: 27) owner:) gCurRoomNum) ; nightingale
+		(if (== ((gInventory at: nightingaleReplacement) owner:) gCurRoomNum) ; nightingale
 			(windupBird init:)
 		)
-		(if (== ((gInventory at: 14) owner:) gCurRoomNum) ; flute
+		(if (== ((gInventory at: fluteReplacement) owner:) gCurRoomNum) ; flute
 			(flute init:)
 		)
 		(if (and (== (gCurRoom script:) lookAtCounterScr) 1)
@@ -433,10 +433,10 @@
 			(1
 				(= register
 					(switch register
-						(20 0)
-						(37 3)
-						(29 1)
-						(31 2)
+						(tinderBoxVerbReplacement 0)
+						(nightingaleVerbReplacement 3)
+						(brushVerbReplacement 1)
+						(fluteVerbReplacement 2)
 					)
 				)
 				(self setScript: (ScriptID 287 0) self register) ; placeOnCounter

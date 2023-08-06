@@ -1678,7 +1678,7 @@
 		cel 5
 		message 67
 		noun 38
-		owner peppermintOwnerReplacement
+		owner pepperMintOwnerReplacement
 	)
 )
 

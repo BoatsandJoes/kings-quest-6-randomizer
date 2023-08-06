@@ -89,16 +89,16 @@
 		(gEgo init: reset: loop: 9 cel: 0 setScale: Scaler 105 90 139 121)
 		(shopOwner init:)
 		(mints init:)
-		(if (== ((gInventory at: 48) owner:) gCurRoomNum) ; tinderBox
+		(if (== ((gInventory at: tinderBoxReplacement) owner:) gCurRoomNum) ; tinderBox
 			(smTinderBox init:)
 		)
-		(if (== ((gInventory at: 3) owner:) gCurRoomNum) ; brush
+		(if (== ((gInventory at: brushReplacement) owner:) gCurRoomNum) ; brush
 			(smPBrush init:)
 		)
-		(if (== ((gInventory at: 27) owner:) gCurRoomNum) ; nightingale
+		(if (== ((gInventory at: nightingaleReplacement) owner:) gCurRoomNum) ; nightingale
 			(smBird init:)
 		)
-		(if (== ((gInventory at: 14) owner:) gCurRoomNum) ; flute
+		(if (== ((gInventory at: fluteReplacement) owner:) gCurRoomNum) ; flute
 			(smFlute init:)
 		)
 		(if (and (IsFlag 29) (IsFlag 30) (not (gEgo has: 0))) ; map
@@ -428,7 +428,7 @@
 					(gCurRoom setScript: (ScriptID 283 1)) ; buyItemWithCoinScr
 				)
 			)
-			((OneOf theVerb 37 20 29 31) ; nightingale, tinderBox, brush, flute
+			((OneOf theVerb nightingaleVerbReplacement tinderBoxVerbReplacement brushVerbReplacement fluteVerbReplacement) ; nightingale, tinderBox, brush, flute
 				(gCurRoom setScript: (ScriptID 283 2) 0 theVerb) ; genericExchangeScr
 			)
 			((== theVerb 66) ; pearl

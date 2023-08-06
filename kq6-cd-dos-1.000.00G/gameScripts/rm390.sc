@@ -302,7 +302,7 @@
 	(method (doVerb theVerb)
 		(switch theVerb
 			(5 ; Do
-				(if (not (gEgo has: peppermintReplacement)) ; peppermint
+				(if (not (gEgo has: pepperMintReplacement)) ; peppermint
 					(gCurRoom setScript: getLeaf)
 				else
 					(gMessager say: 7 5 8 1) ; "Alexander already took some peppermint leaves."
@@ -735,7 +735,7 @@
 					view: 3901
 					loop: 0
 					cel: -1
-					get: peppermintReplacement ; peppermint
+					get: pepperMintReplacement ; peppermint
 					setCycle: End self
 				)
 			)
