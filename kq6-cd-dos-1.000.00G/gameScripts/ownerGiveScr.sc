@@ -371,9 +371,9 @@
 			)
 			(4
 				(if register
-					(gEgo setCycle: Beg self put: 0) ; map
+					(gEgo setCycle: Beg self put: mapReplacement) ; map
 				else
-					(gEgo setCycle: End self get: 0) ; map
+					(gEgo setCycle: End self get: mapReplacement) ; map
 				)
 			)
 			(5

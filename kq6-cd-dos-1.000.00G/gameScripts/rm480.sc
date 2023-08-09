@@ -531,7 +531,7 @@
 			)
 			(5 ; Do
 				(cond
-					((not (gEgo has: 21)) ; lettuce
+					((not (gEgo has: lettuceReplacement)) ; lettuce
 						(proc483_3 self)
 					)
 					((< (- (GetTime 1) global157) 150) ; SysTime12

@@ -101,7 +101,7 @@
 		(if (== ((gInventory at: fluteReplacement) owner:) gCurRoomNum) ; flute
 			(smFlute init:)
 		)
-		(if (and (IsFlag 29) (IsFlag 30) (not (gEgo has: 0))) ; map
+		(if (and (IsFlag 29) (IsFlag 30) (not (gEgo has: mapReplacement))) ; map
 			(map init:)
 		)
 		(cond
@@ -114,7 +114,7 @@
 			)
 			(
 				(or
-					(and (IsFlag 17) (not (gEgo has: 0))) ; map
+					(and (IsFlag 17) (not (gEgo has: mapReplacement))) ; map
 					(and
 						(not (IsFlag 82))
 						(not (IsFlag 28))
@@ -413,7 +413,7 @@
 					((== gAct 1)
 						(gCurRoom setScript: (ScriptID 284 2)) ; ringForMapActIScr
 					)
-					((and (!= gAct 1) (gEgo has: 0)) ; map
+					((and (!= gAct 1) (gEgo has: mapReplacement)) ; map
 						(gCurRoom setScript: (ScriptID 284 3)) ; ringForPearlScr
 					)
 					(else
@@ -432,7 +432,7 @@
 				(gCurRoom setScript: (ScriptID 283 2) 0 theVerb) ; genericExchangeScr
 			)
 			((== theVerb 66) ; pearl
-				(if (gEgo has: 0) ; map
+				(if (gEgo has: mapReplacement) ; map
 					(gCurRoom setScript: (ScriptID 285 0) 0 (IsFlag 36)) ; pearlForRingScr
 				else
 					(gCurRoom setScript: (ScriptID 285 1) 0 (IsFlag 36)) ; pearlForMapScr

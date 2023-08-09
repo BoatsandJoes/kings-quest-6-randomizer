@@ -10,11 +10,11 @@ Most things don't care about the current act, but some do. For example, the new 
 
 
 Items (name, owner, id, verb) (some ids are missing: this means that I haven't replaced them in the scripts yet) (verbs need to be added for most items. Will do this when ids are done):
-map 280  12
+map 280 0 12
 boringBook 270 1 42 (may seem to respawn if item is lost, but actually the respawned book cannot be picked up. This is based on code inspection: confirm ingame)
 brick 510 2 39
 brush 280 3 29
-hair 530  15
+hair 530 4 15
 clothes 540 5 45
 coal 560 6 46
 deadMansCoin 430 7 7
@@ -26,12 +26,12 @@ feather 300 12 30
 flower 300 13 47
 flute 280 14 31
 gauntlet 650 15 48
-cassimaHair 210  18
+cassimaHair 210 16 18
 handkerchief 680 17 50
 holeInTheWall 480 18 25
 huntersLamp 520 19 43
 letter 780 20 61
-lettuce 480  52 (has a special timer. Verb for melting lettuce is 53, melted 54)
+lettuce 480 21 52 (has a special timer. Verb for melting lettuce is 53, melted 54)
 milk 470 22 62
 mint 280 23 63
 mirror 540 24 13
@@ -42,10 +42,10 @@ ticket 600 28 49
 participle 500 29 94
 pearl 450 30 66
 peppermint 390 31 67 (changed to pepperMint so that mint would not regex match it)
-note 210  65
+note 210 32 65
 potion 480 33 14
 rabbitFoot 290 34 68
-ribbon 210  33
+ribbon 210 35 33
 riddleBook 460 36 27
 ring 540 37 69 (has some special logic for beast timer that I have not tested)
 rose 530 38 71
@@ -81,8 +81,9 @@ Locations:
 	Merchant trades
 	    requires: none
 		locations:
-		    map & ink (requires ring)
-			ring retrade (requires pearl. map works, but singsing leaves if you don't have it. I think I will be using the replacements for the retrades though)
+		    map & ink (requires ring. May change ring location to require map instead, but for now it cares about whether you have the item that replaced the map.
+            If you're not in act 1 and you got rid of the item that replaced the map, you may be able to trade ring for map replacement instead of for pearl. Not sure)
+			ring retrade (requires pearl. You can also trade back the item that replaced the map, if desired).
 			4 objects (requires coin. this logic is a complicated special case, since you can only carry 1 at a time, and if you lose it you're locked out of the others)
 		nonlocations:
 		    reanimation

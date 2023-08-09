@@ -52,7 +52,7 @@
 		(if (and (== (gCurRoom script:) lookAtCounterScr) 1)
 			(gMessager say: 9 1) ; "Alexander takes a closer look at the items on the counter."
 		)
-		(if (and (IsFlag 29) (IsFlag 30) (not (gEgo has: 0))) ; map
+		(if (and (IsFlag 29) (IsFlag 30) (not (gEgo has: mapReplacement))) ; map
 			(counterMap init:)
 		)
 		(self setScript: initDoneScr)

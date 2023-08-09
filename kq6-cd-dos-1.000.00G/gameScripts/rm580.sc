@@ -694,10 +694,10 @@
 			)
 			(11
 				(gEgo put: 5 580) ; clothes
-				(if (and (IsFlag 112) (not (gEgo has: 4))) ; hair
+				(if (and (IsFlag 112) (not (gEgo has: hairReplacement))) ; hair
 					(gMessager say: 1 0 15 1 self) ; "Alexander pulls out Beauty's old slave clothes, desperate to beat out the flames! As he does so, a strand of Beauty's hair that had been caught in the mantle comes free of the clothes."
 					(gGame givePoints: 1)
-					(gEgo get: 4) ; hair
+					(gEgo get: hairReplacement) ; hair
 				else
 					(gMessager say: 1 0 9 2 self) ; "Alexander pulls out Beauty's old slave clothes, desperate to beat out the flames!"
 				)

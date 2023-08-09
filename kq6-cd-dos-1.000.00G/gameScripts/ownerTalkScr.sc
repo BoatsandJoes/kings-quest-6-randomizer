@@ -47,7 +47,7 @@
 					setPri: 11
 					setCycle: End self
 				)
-				((gInventory at: 0) owner: -1) ; map
+				((gInventory at: mapReplacement) owner: -1) ; map
 			)
 			(5
 				(= cycles 2)
@@ -244,7 +244,7 @@
 	(method (changeState newState)
 		(switch (= state newState)
 			(0
-				(gEgo get: 0 put: 39 gCurRoomNum) ; map, royalRing
+				(gEgo get: mapReplacement put: 39 gCurRoomNum) ; map, royalRing
 				(gGame handsOff:)
 				(proc280_10 self)
 				(gEgo normal: 0 view: 280 loop: 7 cel: 0)

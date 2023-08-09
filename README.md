@@ -12,7 +12,7 @@ TODO examine patch files for the 4xx rooms, and look into compile errors:
 boringBook.sc
 rm430.sc
 
-TODO figure out why gnome skip doesn't work
+TODO test picking up lettuce replacement when not holding lettuce (to make sure it doesn't crash or melt). Same with beast's ring replacement
 
 This project is built on top of SCI scripts created by Sierra and decompiled by sluicebox.
 

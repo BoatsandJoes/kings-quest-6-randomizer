@@ -11,14 +11,7 @@ def getConfig():
             "nail",
             "boringBook",
             "deadMansCoin",
-            "map",
-            "royalRing",
-            "hair",
-            "cassimaHair",
-            "lettuce",
-            "newLamp",
-            "note",
-            "ribbon"
+            "newLamp"
         ]
     }
 

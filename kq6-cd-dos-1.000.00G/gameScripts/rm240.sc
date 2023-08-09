@@ -103,7 +103,7 @@
 		(if
 			(and
 				(not (OneOf gPrevRoomNum 270 280))
-				(gEgo has: 0) ; map
+				(gEgo has: mapReplacement) ; map
 				(not (IsFlag 110))
 			)
 			(SetFlag 110)

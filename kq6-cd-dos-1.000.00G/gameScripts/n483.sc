@@ -136,7 +136,7 @@
 					(SetFlag 119)
 					(gGame givePoints: 1)
 				)
-				(if (gEgo has: 21) ; lettuce
+				(if (gEgo has: lettuceReplacement) ; lettuce
 					(gMessager say: 10 5 31 1 self 480) ; "Alexander replaces his watery lettuce with a freshly picked specimen."
 				else
 					(gMessager say: 10 5 0 1 self 480) ; "Alexander picks a head of iceberg lettuce."
@@ -157,7 +157,7 @@
 					cel: 0
 					normal: 0
 					cycleSpeed: 12
-					get: 21 ; lettuce
+					get: lettuceReplacement ; lettuce
 					setCycle: End self
 				)
 			)

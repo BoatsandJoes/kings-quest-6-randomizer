@@ -121,10 +121,10 @@
 			(= temp3 gCurRoomNum)
 		)
 		(= temp1 ((gInventory at: 47) owner:)) ; poem
-		(if (== ((gInventory at: 35) owner:) -1) ; ribbon
+		(if (== ((gInventory at: ribbonReplacement) owner:) -1) ; ribbon
 			(theRibbon init:)
 		)
-		(if (== ((gInventory at: 32) owner:) -1) ; note
+		(if (== ((gInventory at: noteReplacement) owner:) -1) ; note
 			(letter init:)
 		)
 		(if (== temp2 140)
@@ -1620,7 +1620,7 @@
 				(= cycles 2)
 			)
 			(1
-				(gEgo get: 35 setHeading: 90 self) ; ribbon
+				(gEgo get: ribbonReplacement setHeading: 90 self) ; ribbon
 			)
 			(2
 				(if (not (IsFlag 112))
@@ -1679,7 +1679,7 @@
 				(= cycles 2)
 			)
 			(1
-				(gEgo get: 32 setHeading: 270 self) ; note
+				(gEgo get: noteReplacement setHeading: 270 self) ; note
 			)
 			(2
 				(= cycles 2)
@@ -1824,7 +1824,7 @@
 						theVerb
 						(cond
 							((not (IsFlag 21)) 11)
-							((gEgo has: 32) 19) ; note
+							((gEgo has: noteReplacement) 19) ; note
 							(else 43)
 						)
 				)
@@ -1905,8 +1905,8 @@
 	(method (init)
 		(super init: &rest)
 		(self approachVerbs: 5) ; Do
-		(if (!= ((gInventory at: 32) owner:) -1) ; note
-			((gInventory at: 32) owner: -1) ; note
+		(if (!= ((gInventory at: noteReplacement) owner:) -1) ; note
+			((gInventory at: noteReplacement) owner: -1) ; note
 			(self setMotion: MoveTo 120 137 self)
 		else
 			(self cue:)
@@ -1931,8 +1931,8 @@
 	(method (init)
 		(super init: &rest)
 		(self approachVerbs: 5 signal: 18448) ; Do
-		(if (!= ((gInventory at: 35) owner:) -1) ; ribbon
-			((gInventory at: 35) owner: -1) ; ribbon
+		(if (!= ((gInventory at: ribbonReplacement) owner:) -1) ; ribbon
+			((gInventory at: ribbonReplacement) owner: -1) ; ribbon
 			(self setMotion: MoveTo 155 138 self)
 		else
 			(self cue:)

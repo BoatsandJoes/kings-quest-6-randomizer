@@ -802,7 +802,7 @@
 	(method (doVerb theVerb)
 		(switch theVerb
 			(1 ; Look
-				(if (and (not (gEgo has: 4)) (not (IsFlag 93))) ; hair
+				(if (and (not (gEgo has: hairReplacement)) (not (IsFlag 93))) ; hair
 					(KQ6Print
 						font: gUserFont
 						say: 0 noun theVerb 0 0 0 0 modNum ; "Beauty's old clothes are very ragged and heavy. They consist of a long, thick dress, and a headpiece which covers the hair and most of the face."
@@ -823,15 +823,15 @@
 				(if
 					(or
 						(IsFlag 143)
-						(gEgo has: 4) ; hair
-						(gEgo has: 16) ; cassimaHair
+						(gEgo has: hairReplacement) ; hair
+						(gEgo has: cassimaHairReplacement) ; cassimaHair
 						(IsFlag 93)
 					)
 					(gMessager say: noun theVerb 34 0 0 modNum) ; "Alexander searches through Beauty's clothes but finds nothing."
 				else
 					(gInventory hide:)
 					(SetFlag 143)
-					(gEgo get: 4) ; hair
+					(gEgo get: hairReplacement) ; hair
 					(gGame givePoints: 1)
 					(KQ6Print
 						font: gUserFont
@@ -1460,7 +1460,7 @@
 				(= cel 4)
 				(self setCursor: 990 1 4)
 				(= state 0)
-				(gEgo put: 21 480) ; lettuce
+				(gEgo put: 21 lettuceOwnerReplacement) ; lettuce
 			)
 		)
 	)
@@ -1736,7 +1736,7 @@
 	(method (doVerb theVerb)
 		(switch theVerb
 			(1 ; Look
-				(if (or (gEgo has: 4) (gEgo has: 16) (IsFlag 112)) ; hair, cassimaHair
+				(if (or (gEgo has: hairReplacement) (gEgo has: cassimaHairReplacement) (IsFlag 112)) ; hair, cassimaHair
 					(gMessager say: noun theVerb 0 0 0 modNum) ; "The lady's hair ribbon is made of the finest red velvet."
 				else
 					(KQ6Print
@@ -1757,15 +1757,15 @@
 				(if
 					(or
 						(IsFlag 143)
-						(gEgo has: 4) ; hair
-						(gEgo has: 16) ; cassimaHair
+						(gEgo has: hairReplacement) ; hair
+						(gEgo has: cassimaHairReplacement) ; cassimaHair
 						(IsFlag 112)
 					)
 					(gMessager say: noun theVerb 34 0 0 modNum) ; "The red ribbon feels soft and luxurious between Alexander's caressing fingers."
 				else
 					(gInventory hide:)
 					(SetFlag 143)
-					(gEgo get: 16) ; cassimaHair
+					(gEgo get: cassimaHairReplacement) ; cassimaHair
 					(gGame givePoints: 1)
 					(KQ6Print
 						font: gUserFont

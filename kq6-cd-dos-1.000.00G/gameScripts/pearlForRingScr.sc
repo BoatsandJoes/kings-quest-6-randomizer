@@ -93,7 +93,7 @@
 	(method (changeState newState)
 		(switch (= state newState)
 			(0
-				(gEgo put: 30 gCurRoomNum get: 0) ; pearl, map
+				(gEgo put: 30 gCurRoomNum get: mapReplacement) ; pearl, map
 				(gGame handsOff:)
 				(proc280_10 self)
 				(gEgo normal: 0 view: 280 loop: 7 cel: 0)
@@ -161,7 +161,7 @@
 	(method (changeState newState)
 		(switch (= state newState)
 			(0
-				(gEgo put: 0 gCurRoomNum) ; map
+				(gEgo put: mapReplacement gCurRoomNum) ; map
 				(gGame handsOff:)
 				(proc280_10 self)
 				(gEgo normal: 0 view: 280 loop: 7 cel: 0)
