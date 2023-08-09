@@ -15,7 +15,6 @@ def createWorld(config):
 
 def shuffleItems(config):
     random.seed()
-    #TODO add logic
     vanillaItems = {
         "map": 0,
         "boringBook": 1,
@@ -77,6 +76,28 @@ def shuffleItems(config):
             itemIdsToRandomize.append(vanillaItems[key])
             locationsToRandomize.append(key)
     result = dict(vanillaItems) # Clone to keep vanilla ids for any unshuffled items. Others will be overwritten
+    
+    if locationsToRandomize.count("map") > 0:
+        # Map is a really critical item, so it's the first bit of logic that I'm writing for the randomizer
+        possibleMapLocations = []
+        possibleMapLocations = addToList(possibleMapLocations, config["itemsToNotShuffle"], "royalRing", 1)
+        possibleMapLocations = addToList(possibleMapLocations, config["itemsToNotShuffle"], "coin", 1)
+        possibleMapLocations = addToList(possibleMapLocations, config["itemsToNotShuffle"], "rabbitFoot", 1)
+        possibleMapLocations = addToList(possibleMapLocations, config["itemsToNotShuffle"], "boringBook", 1)
+        possibleMapLocations = addToList(possibleMapLocations, config["itemsToNotShuffle"], "poem", 1)
+        possibleMapLocations = addToList(possibleMapLocations, config["itemsToNotShuffle"], "mint", 1)
+        #ignoring spellBook, ink, map, and the 4 counter item locations. Let's keep this version simple for now.
+        result[possibleMapLocations[random.randrange(0, len(possibleMapLocations))]] = 0
+        itemIdsToRandomize.remove(0)
+        locationsToRandomize.remove("map")
+    
     for location in locationsToRandomize:
+        #TODO add logic
         result[location] = itemIdsToRandomize.pop(random.randrange(0, len(itemIdsToRandomize)))
     return result
+
+def addToList(list, notAllowedList, itemToAdd, count):
+    if notAllowedList.count(itemToAdd) == 0:
+        for i in range(0, count):
+            list.append(itemToAdd)
+    return list

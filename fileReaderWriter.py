@@ -193,7 +193,10 @@ def writeGameToFiles(game):
     
     readFileFolder = "./gameScripts"
     writeFileFolder = "./src"
-	# TODO delete output folder and recreate
+	# Delete output folder and recreate
+    if os.path.exists(writeFileFolder):
+        deleteFolderRecursive(writeFileFolder)
+    os.makedirs(writeFileFolder)
     # Read list of game files
     listOfScFilenames = os.listdir(readFileFolder)
     for filename in listOfScFilenames:
@@ -235,9 +238,18 @@ def writeGameToFiles(game):
             wf = open(writeFileFolder + "/" + filename, "w", encoding="utf-8")
             wf.writelines(newLines)
             wf.close()
-        #else:
-        #    # Copy unmodified file
-        #    shutil.copy2(readFileFolder + "/" + filename, writeFileFolder + "/" + filename)
+        else:
+            # Copy unmodified file
+            shutil.copy2(readFileFolder + "/" + filename, writeFileFolder + "/" + filename)
     # TODO write spoiler log with solution and item list
     # TODO write spoiler log for just the shopkeeper cheap trade items
     return
+
+def deleteFolderRecursive(writeFileFolder):
+    for filename in os.listdir(writeFileFolder):
+        path = os.path.join(writeFileFolder, filename)
+        if os.path.isfile(path):
+            os.remove(path)
+        else:
+            deleteFolderRecursive(path)
+    os.rmdir(writeFileFolder)
