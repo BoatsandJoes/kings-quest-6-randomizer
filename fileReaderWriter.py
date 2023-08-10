@@ -193,11 +193,13 @@ def writeGameToFiles(game):
     
     readFileFolder = "./gameScripts"
     writeFileFolder = "./src"
+    print("cleaning up old files...")
 	# Delete output folder and recreate
     if os.path.exists(writeFileFolder):
         deleteFolderRecursive(writeFileFolder)
     os.makedirs(writeFileFolder)
     # Read list of game files
+    print("reading and writing files...")
     listOfScFilenames = os.listdir(readFileFolder)
     for filename in listOfScFilenames:
         changed = False
@@ -241,14 +243,19 @@ def writeGameToFiles(game):
         elif re.search("\.sco$", filename):
             # Copy unmodified file
             shutil.copy2(readFileFolder + "/" + filename, writeFileFolder + "/" + filename)
-    # TODO write spoiler log with solution
-    # Write spoiler log with item list
+    # Write spoiler log with item list, and one for just the shop counter
     if os.path.exists("./spoiler.txt"):
         os.remove("./spoiler.txt")
+    if os.path.exists("./shop_counter_spoiler.txt"):
+        os.remove("./shop_counter_spoiler.txt")
     spoiler = open("./spoiler.txt", "w", encoding="utf-8")
+    shopSpoiler = open("./shop_counter_spoiler.txt", "w", encoding="utf-8")
     for key in game["world"].keys():
         spoiler.write(key + ": " + vanillaItemIds[game["world"][key]] + "\n")
+        if key == "nightingale" or key == "flute" or key == "tinderBox" or key == "brush":
+            shopSpoiler.write(key + ": " + vanillaItemIds[game["world"][key]] + "\n")
     spoiler.close()
+    shopSpoiler.close()
     # TODO write spoiler log for just the shopkeeper cheap trade items
     return
 

@@ -5,3 +5,4 @@ import sys
 config = fileReaderWriter.getConfig()
 game = randomizer.createWorld(config)
 fileReaderWriter.writeGameToFiles(game)
+print("done!")

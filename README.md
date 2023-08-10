@@ -2,15 +2,24 @@
 
 This is a (under construction) program that shuffles the locations of items in King's Quest 6. You still have to fulfill all of the normal conditions to pick up an item, but when it enters your inventory, it will be a different item from usual. This creates brand-new surprising ways to softlock yourself, so as always in King's Quest VI, make a lot of saves! For now, there isn't a lot of logic applied (only makes the map accessible, although even that is currently bugged; see known bugs), so the game may not be beatable. In the future, it would be nice to always generate a long-path-beatable game, but there may be some oversights in the logic. The logic will probably not care if you can finish short path or not, but it will often be possible.
 
-Any container (such as the teacup) will be filled at the USUAL LOCATION. These liquids are technically not items unto themselves, and they are not shuffled (at least in the first version of the randomizer). The nail is also not shuffled (it technically doesn't spawn in until you take the picture off the wall, which makes it a bit tricky, and that location is short path only anyway), nor the lamps for sale (they're a little complicated since all 5 are technically the same item), nor the boringBook or deadMansCoin (which have compile errors in their scripts).
+# Instructions
+Download Python (3.9 or higher). Use python to run main.py, which will generate a folder called "src".
+The src folder can then be placed into the King's Quest VI folder (copy game.ini as well).
+Download and open SCI Companion, and then open King's Quest VI (File > Open Game > nagvigate to King's Quest VI > resource.map).
+The scripts can be compiled (click Script > Compile All).
+The randomized version of the game can be played by hitting F5 or clicking Game > Run Game. The scripts will only take effect if the game is run through SCI Companion: it can still be played normally outside of SCI Companion.
+The scripts in the src folder can be replaced with a newly-randomized src folder to shuffle the items again.
+The script also generates spoiler.txt which shows the location of all items (location on left, new item on right), and shop_counter_spoiler.txt which is just the 4 items that you can get for trading in the coin (meaning you don't have to manually trade for all 4 just to check them).
 
-All items are USED in the same way as the vanilla game, with one exception. When trading items BACK to the shopkeeper after obtaining them, he will only take the SHUFFLED item. So for example, if the nightingale has been shuffled to be a handkerchief instead, you need to trade back the handkerchief to get a different item, not the nightingale. This applies to whatever replaces the map as well as whatever replaces the items on the counter. Be careful to not consume these items too early! (and again, with no logic it's totally possible to generate an unbeatable game there).
+# Gotchas
+Any container (such as the teacup) will be filled at the USUAL LOCATION. These liquids are technically not items unto themselves, and they are not shuffled (at least in the first version of the randomizer).
+The nail is also not shuffled (it technically doesn't spawn in until you take the picture off the wall, which makes it a bit tricky, and that location is short path only anyway), nor the lamps for sale (they're a little complicated since all 5 are technically the same item), nor the boringBook or deadMansCoin (which have compile errors in their scripts).
 
-The decompiled game scripts have some item numbers and room numbers replaced with a string (plus verb numbers for the tradables). The python script decides where the items should be shuffled to, and then replaces those strings with the replacement item. The src folder can then be placed into the game folder along with game.ini, the game can be loaded into SCI Companion (File > Open Game > resource.map), the scripts can be compiled (click Script > Compile All), and the randomized version of the game can be played by hitting F5 or clicking Game > Run Game. The scripts will only take effect if the game is run through SCI Companion: it can still be played normally outside of SCI Companion. The scripts in the src folder can be replaced with a newly-randomized src folder to shuffle the items again.
+All items are USED in the same way as the vanilla game, with one exception. When trading items BACK to the shopkeeper after obtaining them, he will only take the SHUFFLED item. So for example, if the nightingale has been shuffled to be a handkerchief instead, you need to trade back the handkerchief to get a different item, not the nightingale. This applies to whatever replaces the map as well as whatever replaces the items on the counter. Be careful to not consume these items too early!
 
-KNOWN BUGS
+# Known Bugs
 Sometimes map goes to vanilla location
-shopkeeper will not take some items back in trade: for example, items obtained in the underworld have a special message about a "ghostly item"
+shopkeeper will not take some items back in trade: for example, items normally obtained in the underworld have a special message about a "ghostly item"
 look into compile errors:
 boringBook.sc
 rm430.sc (deadMansCoin room)
