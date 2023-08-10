@@ -18,7 +18,6 @@ The nail is also not shuffled (it technically doesn't spawn in until you take th
 All items are USED in the same way as the vanilla game, with one exception. When trading items BACK to the shopkeeper after obtaining them, he will only take the SHUFFLED item. So for example, if the nightingale has been shuffled to be a handkerchief instead, you need to trade back the handkerchief to get a different item, not the nightingale. This applies to whatever replaces the map as well as whatever replaces the items on the counter. Be careful to not consume these items too early!
 
 # Known Bugs
-Sometimes map goes to vanilla location
 shopkeeper will not take some items back in trade: for example, items normally obtained in the underworld have a special message about a "ghostly item"
 look into compile errors:
 boringBook.sc

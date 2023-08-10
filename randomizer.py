@@ -87,9 +87,10 @@ def shuffleItems(config):
         possibleMapLocations = addToList(possibleMapLocations, config["itemsToNotShuffle"], "poem", 1)
         possibleMapLocations = addToList(possibleMapLocations, config["itemsToNotShuffle"], "mint", 1)
         #ignoring spellBook, ink, map, and the 4 counter item locations. Let's keep this version simple for now.
-        result[possibleMapLocations[random.randrange(0, len(possibleMapLocations))]] = 0
+        mapLocation = possibleMapLocations[random.randrange(0, len(possibleMapLocations))]
+        result[mapLocation] = 0
         itemIdsToRandomize.remove(0)
-        locationsToRandomize.remove("map")
+        locationsToRandomize.remove(mapLocation)
     
     for location in locationsToRandomize:
         #TODO add logic
