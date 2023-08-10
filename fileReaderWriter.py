@@ -238,10 +238,17 @@ def writeGameToFiles(game):
             wf = open(writeFileFolder + "/" + filename, "w", encoding="utf-8")
             wf.writelines(newLines)
             wf.close()
-        else:
+        elif re.search("\.sco$", filename):
             # Copy unmodified file
             shutil.copy2(readFileFolder + "/" + filename, writeFileFolder + "/" + filename)
-    # TODO write spoiler log with solution and item list
+    # TODO write spoiler log with solution
+    # Write spoiler log with item list
+    if os.path.exists("./spoiler.txt"):
+        os.remove("./spoiler.txt")
+    spoiler = open("./spoiler.txt", "w", encoding="utf-8")
+    for key in game["world"].keys():
+        spoiler.write(key + ": " + vanillaItemIds[game["world"][key]] + "\n")
+    spoiler.close()
     # TODO write spoiler log for just the shopkeeper cheap trade items
     return
 
