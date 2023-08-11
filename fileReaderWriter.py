@@ -11,7 +11,11 @@ def getConfig():
             "nail",
             "boringBook",
             "deadMansCoin",
-            "newLamp"
+            "newLamp",
+            "tinderBox",
+            "flute",
+            "nightingale",
+            "brush"
         ]
     }
 

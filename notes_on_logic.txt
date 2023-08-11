@@ -1,5 +1,5 @@
-These are just the ramblings of a madman. The current version of the randomizer has no logic except
-1. nail, boringBook, newLamp, and deadMansCoin are unshuffled
+These are just the ramblings of a madman, for future implementation. The current version of the randomizer has no logic except
+1. nail, boringBook, newLamp, deadMansCoin, and the 4 shop counter items are unshuffled
 2. map is always in one of the 6 locations that requires no other items (actually 5, since one of those is the boringBook).
 Game will sometimes be beatable but not always. Map and book let you check a lot of places, though, so the odds are not too bad.
 
