@@ -36,7 +36,7 @@ handkerchief 680 17 50
 holeInTheWall 480 18 25
 huntersLamp 520 19 43
 letter 780 20 61
-lettuce 480 21 52 (has a special timer. Verb for melting lettuce is 53, melted 54)
+ 480 21 52 (has a special timer. Verb for melting  is 53, melted 54)
 milk 470 22 62
 mint 280 23 63
 mirror 540 24 13
@@ -73,7 +73,7 @@ If you have an item checked out from the shopkeeper and lose it, you can no long
 map can be traded for ring and possibly pearl. But there's no way to lose those items, and they're given to the shopkeeper by the player (not random), so the map can always be retrieved.
 Trading ring to singsing makes it not retrievable, locking the map and ink locations if you haven't already gotten them.
 Burn Beauty's dress (locks out of short path; nbd)
-iceberg lettuce can melt (but I think it's always possible to get it to the pond before it does. Where is the farthest location from the pond? probably catacombs. Maybe it should be excluded from there if you don't know cataclypse... but maybe it's fine. test it)
+iceberg  can melt (but I think it's always possible to get it to the pond before it does. Where is the farthest location from the pond? probably catacombs. Maybe it should be excluded from there if you don't know cataclypse... but maybe it's fine. test it)
 
 Locations:
     Isle of the Crown:
@@ -137,7 +137,7 @@ Locations:
 			progressive teacup (requires teacup and rotten tomato)
 			rotten tomato
 			scarf
-			lettuce
+			
 			baby's tears (requires spellbook and hunter's lamp. Lamp is weird special case)
 			hole in the wall (requires flute)
 			fake death potion (requires act 4 or 5)
@@ -147,11 +147,11 @@ Locations:
 		    map
 		locations
 		    participle (requires sentence)
-			lamp (requires lettuce)
-			rose (requires shield and either lettuce or (ring and rose)) (reobtainable)
-			beast's ring (requires lettuce shield and scythe, plus ring + rose to get out of beast mode) (see notes)
+			lamp (requires )
+			rose (requires shield and either  or (ring and rose)) (reobtainable)
+			beast's ring (requires  shield and scythe, plus ring + rose to get out of beast mode) (see notes)
 				1. I'm not 100% clear on this but I think the timer activates when getting the item from the beast, but the script egoBeastScript that is called when the timer expires, turning you into a beast, is attached to the ring. This doesn't match the lore, so ideally the randomizer will attach the script to the other item... but it could be destroyed? So it should go on ego (but then disabled somehow)? Maybe it still works if the script is on the ring, even if the ring is not held by Alexander, which would mean no action required? idk. Needs testing
-				2. if you get ring and rose early in the game, you can teleport straight to the beast's garden. hedges + shield work from the back so that's fine (beast ring check is now inaccessible, so logic has to consider that. rose still needs shield to access). Lettuce does not work from the back (could either change alexander's target or change the lethality of the pond in that case, or player can just just use lettuce from the front and then teleport in) (also test boringBook skip, but I assume it doesn't work)
+				2. if you get ring and rose early in the game, you can teleport straight to the beast's garden. hedges + shield work from the back so that's fine (beast ring check is now inaccessible, so logic has to consider that. rose still needs shield to access). Lettuce does not work from the back (could either change alexander's target or change the lethality of the pond in that case, or player can just just use lettuce from the front and then teleport in), but the pond can be skipped with the boring book
 			dress + mirror (requires lettuce, shield, scythe, rose, ring)
 	Druid island
 	    requires:
