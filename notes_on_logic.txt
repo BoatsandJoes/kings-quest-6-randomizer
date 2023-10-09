@@ -112,10 +112,11 @@ Locations:
 	    requires:
 		    map
 		locations:
-		    shield (need to check dagger to get out)
-			coins (need to check dagger to get out)
-			skull (need to check dagger to get out)
-			dagger + sacred water (requires scarf, plus hole in the wall and tinderbox and brick on easy logic)
+		    shield (need to check sacred water to get out)
+			coins (need to check sacred water to get out)
+			skull (need to check sacred water to get out)
+			dagger (requires scarf, plus hole in the wall and tinderbox and brick on easy logic)
+			sacred water (requires dagger + only accessible from dagger location)
 	Isle of Wonder
 	    requires:
 		    map
@@ -185,7 +186,7 @@ Locations:
 			letter (to get out)
 			dagger (to get out)
 			mirror (to get out)
-			mint or peppermint (to get out)
+			mint or peppermint (to get out) (NOTE could also shuffle the REAL lamp into the pool, instead of the replica. Then it would also be usable in the short path)
 		locations:
 		    nail (requires nail to put back, I guess? Or do you put the same item back? But if the location doesn't contain a nail or skeletonKey to begin with, there's no reason to grab it at all)
 			letter (requires nail or skeletonKey)
